@@ -1,0 +1,2 @@
+/usr/bin/ar qc libc_algorithm.a  CMakeFiles/c_algorithm.dir/library.c.o CMakeFiles/c_algorithm.dir/quick_sort.c.o
+/usr/bin/ranlib libc_algorithm.a
