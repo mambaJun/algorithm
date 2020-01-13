@@ -1,7 +1,7 @@
 //
 // Created by jun on 2020/1/10.
 //
-#if 0
+#if 1
 #include<stdio.h>
 
 void input(int [], int);
@@ -14,7 +14,7 @@ void output(int [], int);
 
 int main(void) {
     int n = 6;
-    int arr[n] = {2, 3, 9, 7, 0, 1};
+    int arr[n] = {-1, 0, 1, 2, -1, -4};
     input(arr, n);
     quick_sort(arr, 0, 5);
     output(arr, n);

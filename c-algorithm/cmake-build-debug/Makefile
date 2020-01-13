@@ -150,32 +150,59 @@ library.c.s:
 	$(MAKE) -f CMakeFiles/c_algorithm.dir/build.make CMakeFiles/c_algorithm.dir/library.c.s
 .PHONY : library.c.s
 
-quick_sort.o: quick_sort.c.o
+quick_sort/quick_sort.o: quick_sort/quick_sort.c.o
 
-.PHONY : quick_sort.o
+.PHONY : quick_sort/quick_sort.o
 
 # target to build an object file
-quick_sort.c.o:
-	$(MAKE) -f CMakeFiles/c_algorithm.dir/build.make CMakeFiles/c_algorithm.dir/quick_sort.c.o
-.PHONY : quick_sort.c.o
+quick_sort/quick_sort.c.o:
+	$(MAKE) -f CMakeFiles/c_algorithm.dir/build.make CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.o
+.PHONY : quick_sort/quick_sort.c.o
 
-quick_sort.i: quick_sort.c.i
+quick_sort/quick_sort.i: quick_sort/quick_sort.c.i
 
-.PHONY : quick_sort.i
+.PHONY : quick_sort/quick_sort.i
 
 # target to preprocess a source file
-quick_sort.c.i:
-	$(MAKE) -f CMakeFiles/c_algorithm.dir/build.make CMakeFiles/c_algorithm.dir/quick_sort.c.i
-.PHONY : quick_sort.c.i
+quick_sort/quick_sort.c.i:
+	$(MAKE) -f CMakeFiles/c_algorithm.dir/build.make CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.i
+.PHONY : quick_sort/quick_sort.c.i
 
-quick_sort.s: quick_sort.c.s
+quick_sort/quick_sort.s: quick_sort/quick_sort.c.s
 
-.PHONY : quick_sort.s
+.PHONY : quick_sort/quick_sort.s
 
 # target to generate assembly for a file
-quick_sort.c.s:
-	$(MAKE) -f CMakeFiles/c_algorithm.dir/build.make CMakeFiles/c_algorithm.dir/quick_sort.c.s
-.PHONY : quick_sort.c.s
+quick_sort/quick_sort.c.s:
+	$(MAKE) -f CMakeFiles/c_algorithm.dir/build.make CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.s
+.PHONY : quick_sort/quick_sort.c.s
+
+three_num.o: three_num.c.o
+
+.PHONY : three_num.o
+
+# target to build an object file
+three_num.c.o:
+	$(MAKE) -f CMakeFiles/c_algorithm.dir/build.make CMakeFiles/c_algorithm.dir/three_num.c.o
+.PHONY : three_num.c.o
+
+three_num.i: three_num.c.i
+
+.PHONY : three_num.i
+
+# target to preprocess a source file
+three_num.c.i:
+	$(MAKE) -f CMakeFiles/c_algorithm.dir/build.make CMakeFiles/c_algorithm.dir/three_num.c.i
+.PHONY : three_num.c.i
+
+three_num.s: three_num.c.s
+
+.PHONY : three_num.s
+
+# target to generate assembly for a file
+three_num.c.s:
+	$(MAKE) -f CMakeFiles/c_algorithm.dir/build.make CMakeFiles/c_algorithm.dir/three_num.c.s
+.PHONY : three_num.c.s
 
 # Help Target
 help:
@@ -189,9 +216,12 @@ help:
 	@echo "... library.o"
 	@echo "... library.i"
 	@echo "... library.s"
-	@echo "... quick_sort.o"
-	@echo "... quick_sort.i"
-	@echo "... quick_sort.s"
+	@echo "... quick_sort/quick_sort.o"
+	@echo "... quick_sort/quick_sort.i"
+	@echo "... quick_sort/quick_sort.s"
+	@echo "... three_num.o"
+	@echo "... three_num.i"
+	@echo "... three_num.s"
 .PHONY : help
 
 

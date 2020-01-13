@@ -70,32 +70,47 @@ CMakeFiles/c_algorithm.dir/library.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_algorithm.dir/library.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jun/programming/my-github/algorithm/c-algorithm/library.c -o CMakeFiles/c_algorithm.dir/library.c.s
 
-CMakeFiles/c_algorithm.dir/quick_sort.c.o: CMakeFiles/c_algorithm.dir/flags.make
-CMakeFiles/c_algorithm.dir/quick_sort.c.o: ../quick_sort.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jun/programming/my-github/algorithm/c-algorithm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/c_algorithm.dir/quick_sort.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/c_algorithm.dir/quick_sort.c.o   -c /home/jun/programming/my-github/algorithm/c-algorithm/quick_sort.c
+CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.o: CMakeFiles/c_algorithm.dir/flags.make
+CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.o: ../quick_sort/quick_sort.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jun/programming/my-github/algorithm/c-algorithm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.o   -c /home/jun/programming/my-github/algorithm/c-algorithm/quick_sort/quick_sort.c
 
-CMakeFiles/c_algorithm.dir/quick_sort.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c_algorithm.dir/quick_sort.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jun/programming/my-github/algorithm/c-algorithm/quick_sort.c > CMakeFiles/c_algorithm.dir/quick_sort.c.i
+CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jun/programming/my-github/algorithm/c-algorithm/quick_sort/quick_sort.c > CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.i
 
-CMakeFiles/c_algorithm.dir/quick_sort.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_algorithm.dir/quick_sort.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jun/programming/my-github/algorithm/c-algorithm/quick_sort.c -o CMakeFiles/c_algorithm.dir/quick_sort.c.s
+CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jun/programming/my-github/algorithm/c-algorithm/quick_sort/quick_sort.c -o CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.s
+
+CMakeFiles/c_algorithm.dir/three_num.c.o: CMakeFiles/c_algorithm.dir/flags.make
+CMakeFiles/c_algorithm.dir/three_num.c.o: ../three_num.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jun/programming/my-github/algorithm/c-algorithm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/c_algorithm.dir/three_num.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/c_algorithm.dir/three_num.c.o   -c /home/jun/programming/my-github/algorithm/c-algorithm/three_num.c
+
+CMakeFiles/c_algorithm.dir/three_num.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c_algorithm.dir/three_num.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jun/programming/my-github/algorithm/c-algorithm/three_num.c > CMakeFiles/c_algorithm.dir/three_num.c.i
+
+CMakeFiles/c_algorithm.dir/three_num.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_algorithm.dir/three_num.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jun/programming/my-github/algorithm/c-algorithm/three_num.c -o CMakeFiles/c_algorithm.dir/three_num.c.s
 
 # Object files for target c_algorithm
 c_algorithm_OBJECTS = \
 "CMakeFiles/c_algorithm.dir/library.c.o" \
-"CMakeFiles/c_algorithm.dir/quick_sort.c.o"
+"CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.o" \
+"CMakeFiles/c_algorithm.dir/three_num.c.o"
 
 # External object files for target c_algorithm
 c_algorithm_EXTERNAL_OBJECTS =
 
 libc_algorithm.a: CMakeFiles/c_algorithm.dir/library.c.o
-libc_algorithm.a: CMakeFiles/c_algorithm.dir/quick_sort.c.o
+libc_algorithm.a: CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.o
+libc_algorithm.a: CMakeFiles/c_algorithm.dir/three_num.c.o
 libc_algorithm.a: CMakeFiles/c_algorithm.dir/build.make
 libc_algorithm.a: CMakeFiles/c_algorithm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jun/programming/my-github/algorithm/c-algorithm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libc_algorithm.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jun/programming/my-github/algorithm/c-algorithm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libc_algorithm.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/c_algorithm.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/c_algorithm.dir/link.txt --verbose=$(VERBOSE)
 

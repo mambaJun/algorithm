@@ -15,7 +15,7 @@ import java.util.*;
  * [-1, -1, 2]
  * ]
  */
-public class Main {
+public class 三数之和_15 {
 
     public static void main(String[] args) {
 //        int[] nums = {2, 7, 11, 15};
@@ -47,6 +47,9 @@ public class Main {
             return result;
         }
         for (int i = 0; i < nums.length - 2; i++) {
+            if (nums[i] > 0) {
+                break;
+            }
             // 跳过重复答案
             if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) {
                 int l = i + 1;

@@ -84,7 +84,10 @@
 		<Unit filename="/home/jun/programming/my-github/algorithm/c-algorithm/library.h">
 			<Option target="c_algorithm"/>
 		</Unit>
-		<Unit filename="/home/jun/programming/my-github/algorithm/c-algorithm/quick_sort.c">
+		<Unit filename="/home/jun/programming/my-github/algorithm/c-algorithm/quick_sort/quick_sort.c">
+			<Option target="c_algorithm"/>
+		</Unit>
+		<Unit filename="/home/jun/programming/my-github/algorithm/c-algorithm/three_num.c">
 			<Option target="c_algorithm"/>
 		</Unit>
 		<Unit filename="/home/jun/programming/my-github/algorithm/c-algorithm/CMakeLists.txt">
