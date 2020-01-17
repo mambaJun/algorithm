@@ -12,10 +12,24 @@ public class ArrayUtil {
 
     public static <T> void outputList_2(List<List<T>> lists) {
         for (List<T> list : lists) {
-            for (T t : list) {
+            outputList_1(list);
+        }
+    }
+
+    public static void outputArray_1(int[] list) {
+        if (list != null) {
+            for (int t : list) {
                 System.out.printf("%s ", t);
             }
             System.out.println();
         }
+
+    }
+
+    public static <T> void outputList_1(List<T> list) {
+        for (T t : list) {
+            System.out.printf("%s ", t);
+        }
+        System.out.println();
     }
 }
