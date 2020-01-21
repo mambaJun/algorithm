@@ -43,8 +43,6 @@ public class 四数之和_18 {
         List<List<Integer>> result = new ArrayList<>();
 
         Arrays.sort(nums);
-//        System.out.println(Arrays.toString(nums));
-
         int length = nums.length;
 
         for (int i = 0; i < nums.length - 3; i++) {
@@ -76,58 +74,15 @@ public class 四数之和_18 {
                         result.add(Arrays.asList(nums[i], nums[j], nums[k], nums[h]));
                         k = moveLeft(nums, k, h);
                         h = moveRight(nums, k, h);
-                    } else if (nums[i] + nums[j] + nums[k] + nums[h] > target) {
+                        continue;
+                    }
+                    if (nums[i] + nums[j] + nums[k] + nums[h] > target) {
                         h = moveRight(nums, k, h);
-                    } else {
-                        k = moveLeft(nums, k, h);
-                    }
-                }
-            }
-        }
-        return result;
-    }
-
-    private static boolean check(int num, int target) {
-        return num > target;
-    }
-
-    private static int moveRight(int[] nums, int l, int r) {
-        while (l < r && nums[r] == nums[r - 1]) r--;
-        r--;
-        return r;
-    }
-
-    private static int moveLeft(int[] nums, int l, int r) {
-        while (l < r && nums[l] == nums[l + 1]) l++;
-        l++;
-        return l;
-    }
-
-    /*public static List<List<Integer>> fourSum(int[] nums, int target) {
-        List<List<Integer>> result = new ArrayList<>();
-        if (nums == null || nums.length < 4) return new ArrayList<>();
-        Arrays.sort(nums);
-        int length = nums.length;
-        for (int i = 0; i < length - 3; i++) {
-            for (int j = i + 1; j < length - 2; ++j) {
-                int l = j + 1;
-                int r = length - 1;
-                while (l < r) {
-                    if (nums[i] + nums[j] + nums[l] + nums[r] == target) {
-                        result.add(Arrays.asList(nums[i], nums[j], nums[l], nums[r]));
-                        l = moveLeft(nums, l, r);
-                        r = moveRight(nums, l, r);
                         continue;
                     }
-                    if (nums[i] + nums[j] + nums[l] + nums[r] < target) {
-                        l = moveLeft(nums, l, r);
-                        continue;
-                    }
-                    r = moveRight(nums, l, r);
+                    k = moveLeft(nums, k, h);
                 }
-                while (j < length - 2 && nums[j] == nums[j + 1]) j++;
             }
-            while (i < length - 3 && nums[i] == nums[i + 1]) i++;
         }
         return result;
     }
@@ -142,5 +97,5 @@ public class 四数之和_18 {
         while (l < r && nums[l] == nums[l + 1]) l++;
         l++;
         return l;
-    }*/
+    }
 }
