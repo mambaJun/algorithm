@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/jun/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.5662.56/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/jun/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/jun/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.5662.56/bin/cmake/linux/bin/cmake -E remove -f
+RM = /home/jun/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/jun/programming/my-github/algorithm/c-algorithm/cmake-b
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/jun/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.5662.56/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/jun/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/jun/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.5662.56/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/jun/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -177,32 +177,32 @@ quick_sort/quick_sort.c.s:
 	$(MAKE) -f CMakeFiles/c_algorithm.dir/build.make CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.s
 .PHONY : quick_sort/quick_sort.c.s
 
-three_num.o: three_num.c.o
+三数之和/three_num.o: 三数之和/three_num.c.o
 
-.PHONY : three_num.o
+.PHONY : 三数之和/three_num.o
 
 # target to build an object file
-three_num.c.o:
-	$(MAKE) -f CMakeFiles/c_algorithm.dir/build.make CMakeFiles/c_algorithm.dir/three_num.c.o
-.PHONY : three_num.c.o
+三数之和/three_num.c.o:
+	$(MAKE) -f CMakeFiles/c_algorithm.dir/build.make CMakeFiles/c_algorithm.dir/三数之和/three_num.c.o
+.PHONY : 三数之和/three_num.c.o
 
-three_num.i: three_num.c.i
+三数之和/three_num.i: 三数之和/three_num.c.i
 
-.PHONY : three_num.i
+.PHONY : 三数之和/three_num.i
 
 # target to preprocess a source file
-three_num.c.i:
-	$(MAKE) -f CMakeFiles/c_algorithm.dir/build.make CMakeFiles/c_algorithm.dir/three_num.c.i
-.PHONY : three_num.c.i
+三数之和/three_num.c.i:
+	$(MAKE) -f CMakeFiles/c_algorithm.dir/build.make CMakeFiles/c_algorithm.dir/三数之和/three_num.c.i
+.PHONY : 三数之和/three_num.c.i
 
-three_num.s: three_num.c.s
+三数之和/three_num.s: 三数之和/three_num.c.s
 
-.PHONY : three_num.s
+.PHONY : 三数之和/three_num.s
 
 # target to generate assembly for a file
-three_num.c.s:
-	$(MAKE) -f CMakeFiles/c_algorithm.dir/build.make CMakeFiles/c_algorithm.dir/three_num.c.s
-.PHONY : three_num.c.s
+三数之和/three_num.c.s:
+	$(MAKE) -f CMakeFiles/c_algorithm.dir/build.make CMakeFiles/c_algorithm.dir/三数之和/three_num.c.s
+.PHONY : 三数之和/three_num.c.s
 
 # Help Target
 help:
@@ -219,9 +219,9 @@ help:
 	@echo "... quick_sort/quick_sort.o"
 	@echo "... quick_sort/quick_sort.i"
 	@echo "... quick_sort/quick_sort.s"
-	@echo "... three_num.o"
-	@echo "... three_num.i"
-	@echo "... three_num.s"
+	@echo "... 三数之和/three_num.o"
+	@echo "... 三数之和/three_num.i"
+	@echo "... 三数之和/three_num.s"
 .PHONY : help
 
 

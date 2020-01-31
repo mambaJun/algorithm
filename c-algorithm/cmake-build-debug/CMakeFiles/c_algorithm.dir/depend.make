@@ -6,5 +6,5 @@ CMakeFiles/c_algorithm.dir/library.c.o: ../library.h
 
 CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.o: ../quick_sort/quick_sort.c
 
-CMakeFiles/c_algorithm.dir/three_num.c.o: ../three_num.c
+CMakeFiles/c_algorithm.dir/三数之和/three_num.c.o: ../三数之和/three_num.c
 

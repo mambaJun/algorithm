@@ -28,4 +28,29 @@ package com.jun.颠倒的二进制_190;
  * @date 2020/1/21 下午4:32
  */
 public class 颠倒的二进制_190 {
+    /**
+     * you need treat n as an unsigned value
+     *
+     * @param n
+     * @return
+     */
+    public static int reverseBits(int n) {
+        int res = 0;
+        for (int i = 0; i < 32; i++) {
+            //一位一位来
+            int temp = n >> i;
+            //取出最低位
+            temp &= 1;
+            //颠倒，左移到前面
+            temp <<= (31 - i);
+            //“累加”
+            res |= temp;
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(reverseBits(43261596));
+    }
+
 }

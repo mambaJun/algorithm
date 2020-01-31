@@ -32,4 +32,11 @@ public class ArrayUtil {
         }
         System.out.println();
     }
+
+    public static void outputArray_1(int[] nums, int index) {
+        for (int i = 0; i < index; i++) {
+            System.out.printf("%d ",nums[i]);
+        }
+        System.out.println();
+    }
 }

@@ -6,7 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/home/jun/programming/my-github/algorithm/c-algorithm/library.c" "/home/jun/programming/my-github/algorithm/c-algorithm/cmake-build-debug/CMakeFiles/c_algorithm.dir/library.c.o"
   "/home/jun/programming/my-github/algorithm/c-algorithm/quick_sort/quick_sort.c" "/home/jun/programming/my-github/algorithm/c-algorithm/cmake-build-debug/CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.o"
-  "/home/jun/programming/my-github/algorithm/c-algorithm/three_num.c" "/home/jun/programming/my-github/algorithm/c-algorithm/cmake-build-debug/CMakeFiles/c_algorithm.dir/three_num.c.o"
+  "/home/jun/programming/my-github/algorithm/c-algorithm/三数之和/three_num.c" "/home/jun/programming/my-github/algorithm/c-algorithm/cmake-build-debug/CMakeFiles/c_algorithm.dir/三数之和/three_num.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

@@ -1,5 +1,7 @@
 package com.jun.整数反转_7;
 
+import org.omg.PortableInterceptor.INACTIVE;
+
 /**
  * @author Jun
  * @date 2020/1/21 下午2:39
@@ -29,6 +31,7 @@ public class 整数反转_7 {
      * @return
      */
     public static int reverse(int x) {
+        if (x == Integer.MIN_VALUE || x == Integer.MAX_VALUE) return 0;
         long result = 0;
         do {
             result = result * 10 + x % 10;
