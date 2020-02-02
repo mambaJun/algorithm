@@ -15,15 +15,29 @@ package com.jun.零钱兑换_322;
  * 说明:
  * 你可以认为每种硬币的数量是无限的。
  * <p>
- * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/coin-change
- * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  *
  * @author Jun
  * @date 2020/2/1 下午6:42
  */
 public class 零钱兑换_322 {
-    public int coinChange(int[] coins, int amount) {
 
+    public static void main(String[] args) {
+        int[] coins = {1, 2, 5};
+        int amount = 11;
+        System.out.println(coinChange(coins, amount));
+    }
+
+    public static int coinChange(int[] coins, int amount) {
+
+        for (int i = 10; i >= 0; i--) {
+            for (int j = 10; j >= 0; j--) {
+                for (int k = 10; k >= 0; k--) {
+                    if (5 * i + 2 * j + 1 * k == amount) {
+                        return i + j + k;
+                    }
+                }
+            }
+        }
+        return -1;
     }
 }

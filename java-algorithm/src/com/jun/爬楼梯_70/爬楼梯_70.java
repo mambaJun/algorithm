@@ -35,18 +35,54 @@ public class 爬楼梯_70 {
     public static void main(String[] args) {
         System.out.println(climbStairs(2));
         System.out.println(climbStairs(3));
+        System.out.println(climbStairs(4));
     }
 
+    /**
+     * 动态规划
+     *
+     * @param n
+     * @return
+     */
+    public static int climbStairs2(int n) {
+
+        if (n <= 2) {
+            return n;
+        }
+
+        if (results[n] == 0) {
+            results[n] = climbStairs1(n - 1) + climbStairs1(n - 2);
+        }
+
+        return results[n];
+    }
+
+
+    /**
+     * 递归 ＋ 备忘录 基本上算是 动态规划的效率
+     */
+    static int[] results = new int[100];
+
+    public static int climbStairs1(int n) {
+
+        if (n <= 2) {
+            return n;
+        }
+
+        if (results[n] == 0) {
+            results[n] = climbStairs1(n - 1) + climbStairs1(n - 2);
+        }
+
+        return results[n];
+    }
+
+    /**
+     * 递归树 效率最低
+     *
+     * @param n
+     * @return
+     */
     public static int climbStairs(int n) {
-        if (n < 1) {
-            return 0;
-        }
-        if (n == 1) {
-            return 1;
-        }
-        if (n == 2) {
-            return 2;
-        }
-        return climbStairs(n - 1) + climbStairs(n - 2);
+        return n <= 2 ? n : climbStairs(n - 1) + climbStairs(n - 2);
     }
 }

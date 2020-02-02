@@ -16,15 +16,14 @@ public class ArrayUtil {
         }
     }
 
-    public static void outputArray_1(int[] list) {
-        if (list != null) {
-            for (int t : list) {
-                System.out.printf("%s ", t);
-            }
-            System.out.println();
-        }
-
-    }
+//    public static void outputArray_1(int[] list) {
+//        if (list != null) {
+//            for (int t : list) {
+//                System.out.printf("%s ", t);
+//            }
+//            System.out.println();
+//        }
+//    }
 
     public static <T> void outputList_1(List<T> list) {
         for (T t : list) {
@@ -35,7 +34,14 @@ public class ArrayUtil {
 
     public static void outputArray_1(int[] nums, int index) {
         for (int i = 0; i < index; i++) {
-            System.out.printf("%d ",nums[i]);
+            System.out.printf("%d ", nums[i]);
+        }
+        System.out.println();
+    }
+
+    public static void outputArray_1(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            System.out.printf("%d ", nums[i]);
         }
         System.out.println();
     }
