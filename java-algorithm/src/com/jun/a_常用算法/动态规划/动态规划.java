@@ -1,4 +1,4 @@
-package com.jun.a_常用算法;
+package com.jun.a_常用算法.动态规划;
 
 import com.jun.斐波那契数列_509.斐波那契数列_509;
 

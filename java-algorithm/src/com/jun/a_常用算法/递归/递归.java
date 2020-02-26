@@ -1,4 +1,4 @@
-package com.jun.a_常用算法;
+package com.jun.a_常用算法.递归;
 
 import com.jun.斐波那契数列_509.斐波那契数列_509;
 import com.jun.爬楼梯_70.爬楼梯_70;
