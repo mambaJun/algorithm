@@ -57,8 +57,7 @@ public class _1143最长公共子序列_dp {
                 dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
             }
         }
-
-
+        
 //        for (int i = 0; i < text1.length(); i++) {
 //            for (int j = 0; j < text2.length(); j++) {
 //                System.out.printf("%d ", dp[i][j]);
