@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/jun/programming/my-github/algorithm/c-algorithm/library.c" "/home/jun/programming/my-github/algorithm/c-algorithm/cmake-build-debug/CMakeFiles/c_algorithm.dir/library.c.o"
   "/home/jun/programming/my-github/algorithm/c-algorithm/quick_sort/quick_sort.c" "/home/jun/programming/my-github/algorithm/c-algorithm/cmake-build-debug/CMakeFiles/c_algorithm.dir/quick_sort/quick_sort.c.o"
   "/home/jun/programming/my-github/algorithm/c-algorithm/三数之和/three_num.c" "/home/jun/programming/my-github/algorithm/c-algorithm/cmake-build-debug/CMakeFiles/c_algorithm.dir/三数之和/three_num.c.o"
+  "/home/jun/programming/my-github/algorithm/c-algorithm/进制转换/进制转换.c" "/home/jun/programming/my-github/algorithm/c-algorithm/cmake-build-debug/CMakeFiles/c_algorithm.dir/进制转换/进制转换.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
