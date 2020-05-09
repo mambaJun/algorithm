@@ -68,9 +68,9 @@ public class _1143最长公共子序列_递归版_超时 {
     }
 
     public static void main(String[] args) {
-//        "ezupkr"
-//        "ubmrapg"
-//        System.out.println(longestCommonSubsequence("ezupkr", "ubmrapg"));
-        System.out.println(longestCommonSubsequence("abcd", "adcc"));
+        String text1 = "abcd";
+        String text2 = "adcc";
+
+        System.out.println(longestCommonSubsequence(text1, text2));
     }
 }

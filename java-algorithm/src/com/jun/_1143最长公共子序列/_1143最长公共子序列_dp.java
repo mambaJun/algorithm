@@ -39,41 +39,64 @@ package com.jun._1143最长公共子序列;
  */
 public class _1143最长公共子序列_dp {
 
-    /**
-     * 最长公共子序列
-     *
-     * @param text1
-     * @param text2
-     * @return
-     */
+/*
+   a c a e c
+ 0 0 0 0 0 0
+a0 1 1 1 1 1
+b0 1 1 1 1 1
+c0 1 2 2 2 2
+c0 1 2 2 2 3
+c0 1 2 2 2 3
+
+
+   a s c e c
+   0 0 0 0 0
+a0 1 0 0 0 0
+b0 0 1 1 1 1
+c0 1 1 2 0 0
+c0 0 0 0 2 2
+c0
+题解：
+    大概：
+        两个事物进行对比，可以看作二维数组。
+        无论我选中二维数组中的任一坐标，都可以得到当前位置的最长子序列值（减而治之 大事化小）
+    细节：
+        很巧妙的将两个字符串变成了一个二位数组，坐标全为 0，从坐标轴到（n,m）出发
+        初始状态：数组全 0
+        状态方程 dp[i][j] = text1.charAt(i - 1) == text2.charAt(j - 1)
+                        ? dp[i - 1][j - 1] + 1
+                        : Math.max(dp[i - 1][j], dp[i][j - 1]);
+        刚开始我以为
+        当 text1.charAt(i - 1) == text2.charAt(j - 1)满足的时候，
+        i++
+        j++
+        其他没有做到的地方 为 初始状态 0
+        但是，
+        仔细将上面的数组按照程序画了一遍就明白了，
+        即时 text1.charAt(i - 1) == text2.charAt(j - 1)满足的时候
+        只进行 j++
+        这样，就能保证，无论我选中二维数组中的任一坐标，都可以得到当前位置的最长子序列值
+*/
+
     public static int longestCommonSubsequence(String text1, String text2) {
         int[][] dp = new int[text1.length() + 1][text2.length() + 1];
+
         for (int i = 1; i <= text1.length(); i++) {
             for (int j = 1; j <= text2.length(); j++) {
-                if (text1.charAt(i - 1) == text2.charAt(j - 1)) {
-                    dp[i][j] = dp[i - 1][j - 1] + 1;
-                    continue;
-                }
-                dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+
+                dp[i][j] = text1.charAt(i - 1) == text2.charAt(j - 1)
+                        ? dp[i - 1][j - 1] + 1
+                        : Math.max(dp[i - 1][j], dp[i][j - 1]);
             }
         }
-        
-//        for (int i = 0; i < text1.length(); i++) {
-//            for (int j = 0; j < text2.length(); j++) {
-//                System.out.printf("%d ", dp[i][j]);
-//            }
-//            System.out.println();
-//        }
-
-
 
         return dp[text1.length()][text2.length()];
     }
 
     public static void main(String[] args) {
-//        "ezupkr"
-//        "ubmrapg"
-        System.out.println(longestCommonSubsequence("ezupkr", "ubmrapg"));
-//        System.out.println(longestCommonSubsequence("abcd", "adcc"));
+        String text1 = "abcd";
+        String text2 = "adcc";
+
+        System.out.println(longestCommonSubsequence(text1, text2));
     }
 }
