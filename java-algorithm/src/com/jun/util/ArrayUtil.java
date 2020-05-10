@@ -45,4 +45,17 @@ public class ArrayUtil {
         }
         System.out.println();
     }
+
+    public static void outputBooleanArray_2(boolean[][] arr) {
+        for (boolean[] booleans : arr) {
+            outputBooleanArray_1(booleans);
+        }
+    }
+
+    public static void outputBooleanArray_1(boolean[] booleans) {
+        for (boolean aBoolean : booleans) {
+            System.out.printf(aBoolean + "\t");
+        }
+        System.out.println();
+    }
 }
