@@ -42,23 +42,32 @@ import com.jun.util.ArrayUtil;
  * @author Jun
  * @date 2020/5/10 下午10:59
  */
-public class _62不同路径 {
+public class _62不同路径_递归版 {
+
 
     public static int uniquePaths(int m, int n) {
-        int[][] dp = new int[m][n];
+        int[][] arr = new int[m + 1][n + 1];
+        arr[0][0] = 1;
+        return paths(arr, m, n);
 
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                if (i == 0 || j == 0) {
-                    dp[i][j] = 1;
-                    continue;
-                }
+    }
 
-                dp[i][j] += dp[i - 1][j] + dp[i][j - 1];
-            }
+    private static int paths(int[][] arr, int m, int n) {
+        if (m <= 0 || n <= 0) {
+            return 0;
         }
-        ArrayUtil.outputIntArray_2(dp);
-        return dp[m - 1][n - 1];
+        if (arr[m][n] > 0) {
+            return arr[m][n];
+        }
+
+        if (m == 1 || n == 1) {
+            return 1;
+        }
+
+        arr[m - 1][n] += uniquePaths(m - 1, n);
+        arr[m][n - 1] += uniquePaths(m, n - 1);
+        arr[m][n] = arr[m - 1][n] + arr[m][n - 1];
+        return arr[m][n];
     }
 
     public static void main(String[] args) {
