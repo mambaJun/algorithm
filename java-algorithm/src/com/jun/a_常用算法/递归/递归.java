@@ -1,7 +1,7 @@
 package com.jun.a_常用算法.递归;
 
 import com.jun.斐波那契数列_509.斐波那契数列_509;
-import com.jun.爬楼梯_70.爬楼梯_70;
+import com.jun._70爬楼梯.爬楼梯_70;
 import com.jun.第N个泰波那契数_1137.第N个泰波那契数_1137;
 
 /**

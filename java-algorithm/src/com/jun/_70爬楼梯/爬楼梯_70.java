@@ -1,4 +1,4 @@
-package com.jun.爬楼梯_70;
+package com.jun._70爬楼梯;
 
 /**
  * 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
@@ -39,20 +39,13 @@ public class 爬楼梯_70 {
     }
 
     /**
-     * 动态规划
+     * 动态规划 - 窗口法
      *
      * @param n
      * @return
      */
     public static int climbStairs2(int n) {
 
-        if (n <= 2) {
-            return n;
-        }
-
-        if (results[n] == 0) {
-            results[n] = climbStairs1(n - 1) + climbStairs1(n - 2);
-        }
 
         return results[n];
     }
