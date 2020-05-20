@@ -44,7 +44,7 @@ public class _139单词拆分_回溯法 {
             return true;
         }
         for (int end = start + 1; end <= s.length(); end++) {
-            System.out.println(s.substring(start, end));
+            System.out.printf("%d  -  %d " + s.substring(start, end) + "\n", start, end);
             if (wordDict.contains(s.substring(start, end)) && word_break(s, wordDict, end)) {
                 return true;
             }
