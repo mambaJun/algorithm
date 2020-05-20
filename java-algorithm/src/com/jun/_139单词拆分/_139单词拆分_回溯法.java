@@ -32,7 +32,8 @@ import java.util.*;
  * @author Jun
  * @date 2020/5/20 下午10:05
  */
-public class _139单词拆分 {
+public class _139单词拆分_回溯法 {
+
 
     public static boolean wordBreak(String s, List<String> wordDict) {
         return word_break(s, new HashSet<>(wordDict), 0);
@@ -42,7 +43,8 @@ public class _139单词拆分 {
         if (start == s.length()) {
             return true;
         }
-        for (int end = start; end < s.length(); end++) {
+        for (int end = start + 1; end <= s.length(); end++) {
+            System.out.println(s.substring(start, end));
             if (wordDict.contains(s.substring(start, end)) && word_break(s, wordDict, end)) {
                 return true;
             }
@@ -50,20 +52,14 @@ public class _139单词拆分 {
         return false;
     }
 
-    //    public static void main(String[] args) {
-//        String s = "leetcode";
-//        List<String> wordDict = new ArrayList<>();
-//        wordDict.add("leet");
-//        wordDict.add("code");
-//
-//        System.out.println(wordBreak(s, wordDict));
-//    }
     public static void main(String[] args) {
-        String string = "abc";
-        Set set = new HashSet();
-        set.add("abc");
-        set.add("cdefg");
-        System.out.println(set.contains(string));
+        String s = "leetcode";
+        List<String> wordDict = new ArrayList<>();
+        wordDict.add("leet");
+        wordDict.add("code");
+
+        System.out.println(wordBreak(s, wordDict));
     }
+
 }
 
