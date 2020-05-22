@@ -53,7 +53,7 @@ public class _139单词拆分_回溯法 {
     }
 
     public static void main(String[] args) {
-        String s = "leetcode";
+        String s = "leetcodec";
         List<String> wordDict = new ArrayList<>();
         wordDict.add("leet");
         wordDict.add("code");
