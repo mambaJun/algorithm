@@ -25,3 +25,5 @@ out
 target
 /.idea
 /*.iml
+!/src/com/jun/_5最长回文子串/_5最长回文子串_DP.java
+!/src/com/jun/_5最长回文子串/_5最长回文子串_DP.java

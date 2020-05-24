@@ -1,6 +1,9 @@
 package com.jun._139单词拆分;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * 给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，判定 s 是否可以被空格拆分为一个或多个在字典中出现的单词。
@@ -32,33 +35,9 @@ import java.util.*;
  * @author Jun
  * @date 2020/5/20 下午10:05
  */
-public class _139单词拆分_回溯法 {
+public class _139单词拆分_dp {
 
     public static boolean wordBreak(String s, List<String> wordDict) {
-        return word_break(0, s, new HashSet<>(wordDict));
-    }
-
-    private static boolean word_break(int start, String s, Set<String> set) {
-        int length = s.length();
-        if (length == start) {
-            return true;
-        }
-
-        /*
-        现在对回溯的理解：
-            一般都是结合递归来实现回溯法
-            一定规模的事件，从小开始，不符合就下一个，符合则继续
-            问题是不是适合 结果 是或否 的问题？
-            我的猜想，等刷回溯法的时候再总结
-        */
-
-        for (int end = start + 1; end <= length; end++) {
-            if (set.contains(s.substring(start, end)) && word_break(end, s, set)) {
-                return true;
-            }
-        }
-
-        return false;
     }
 
     public static void main(String[] args) {
@@ -71,3 +50,51 @@ public class _139单词拆分_回溯法 {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
