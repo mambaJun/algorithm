@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jun/programming/my-github/algorithm/c-algorithm/quick_sort/quick_sort.c
+stdio.h
+-
+
+/home/jun/programming/my-github/algorithm/c-algorithm/三数之和/three_num.c
+stdio.h
+-
+stdlib.h
+-
+

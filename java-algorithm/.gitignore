@@ -1,0 +1,29 @@
+HELP.md
+/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+leetcode
+out
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/build/
+target
+/.idea
+/*.iml
+!/src/com/jun/_5最长回文子串/_5最长回文子串_DP.java
+!/src/com/jun/_5最长回文子串/_5最长回文子串_DP.java
