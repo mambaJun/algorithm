@@ -18,53 +18,41 @@ package com.jun._303区域和检测_数组不可变;
  * @author Jun
  * @date 2020/6/23 下午8:19
  */
-public class _303区域和检测_数组不可变 {
+public class _303区域和检测_数组不可变_一维dp {
     public static void main(String[] args) {
         int[] nums = new int[]{-2, 0, 3, -5, 2, -1};
         int i = 0;
         int j = 2;
-        NumArray obj = new NumArray(nums);
-        int result = obj.sumRange(i, j);
-        System.out.println(result);
+        NumArray_2 obj = new NumArray_2(nums);
+        System.out.println(obj.sumRange(0, 2));
+        System.out.println(obj.sumRange(2, 5));
+        System.out.println(obj.sumRange(0, 5));
     }
 }
 
-class NumArray {
+class NumArray_2 {
     private int[] nums;
-    private int[][] result;
+    private int[] result;
 
-    public NumArray(int[] nums) {
+    public NumArray_2(int[] nums) {
         this.nums = nums;
-        this.result = new int[nums.length][nums.length];
+        this.result = new int[nums.length + 1];
+
         for (int i = 0; i < nums.length; i++) {
-            result[i][i] = nums[i];
+            result[i + 1] += result[i] + nums[i];
         }
     }
 
-    /*
-        -2  0   3   -5  2   -1
-    -2  -2
-    0       0
-    3           3
-    2                   2
-    -1                         -1
-    */
     public int sumRange(int i, int j) {
-
-        int length = nums.length;
-        if (i > j || length < 1) {
+        if (nums.length < 1 || i > j) {
             return 0;
         }
 
-        for (int k = 0; k <; k++) {
+        /*
+            O(N) 时间进行填充 缓存集
+            因为结果包含第i、j两个结果，所以用第j 减去 i -1 就可以得到结果（一位数组画个坐标轴，更直观*） result[j + 1] - result[i]
+        */
 
-        }
-
-        for (int row = 0; row < length; row++) {
-            for (int clu = 0; clu < length; clu++) {
-                result[row][clu] =
-            }
-        }
-        return 0;
+        return result[j + 1] - result[i];
     }
 }

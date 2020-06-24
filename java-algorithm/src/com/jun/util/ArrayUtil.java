@@ -46,15 +46,28 @@ public class ArrayUtil {
         System.out.println();
     }
 
+    public static void outputIntArray_one(Integer[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            System.out.printf("%d ", nums[i]);
+        }
+        System.out.println();
+    }
+
     public static void outputIntArray_2(int[][] arr) {
         for (int i = 0; i < arr.length; i++) {
             outputIntArray_1(arr[i]);
         }
     }
 
-    public static void outputIntArray_1(int[] booleans) {
-        for (int i = 0; i < booleans.length; i++) {
-            System.out.printf(booleans[i] + "\t");
+    public static void outputIntArray_2(Integer[][] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            outputIntArray_one(arr[i]);
+        }
+    }
+
+    public static void outputIntArray_1(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.printf(arr[i] + "\t");
         }
         System.out.println();
     }
