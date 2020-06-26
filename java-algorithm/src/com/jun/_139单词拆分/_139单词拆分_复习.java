@@ -33,70 +33,49 @@ import java.util.Set;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  *
  * @author Jun
- * @date 2020/5/20 下午10:05
+ * @date 2020/6/17 下午9:52
  */
-public class _139单词拆分_dp {
+public class _139单词拆分_复习 {
 
     public static boolean wordBreak(String s, List<String> wordDict) {
+        Boolean[] dp = new Boolean[s.length()];
+        return word_break(0, s, new HashSet(wordDict), dp);
+    }
 
-        // TODO dp版 没写
-        return false;
+    /**
+     * 递归方法
+     *
+     * @param start
+     * @param s
+     * @param set
+     * @return
+     */
+    public static boolean word_break(int start, String s, Set set, Boolean[] dp) {
+        int length = s.length();
+        // 递归出口
+        if (start == length) {
+            return true;
+        }
+
+        if (dp[start] != null) {
+            return dp[start];
+        }
+
+        // 递归套路： 递归方法 + 递归出口
+        for (int end = start + 1; end <= s.length(); end++) {
+            if (set.contains(s.substring(start, end)) && word_break(end, s, set, dp)) {
+                return dp[start] = true;
+            }
+        }
+        return dp[start] = false;
     }
 
     public static void main(String[] args) {
         String s = "leetcode";
-        List<String> wordDict = new ArrayList<>();
-        wordDict.add("leet");
-        wordDict.add("code");
+        List<String> list = new ArrayList<>();
+        list.add("leet");
+        list.add("code");
 
-        System.out.println(wordBreak(s, wordDict));
+        System.out.println(wordBreak(s, list));
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
