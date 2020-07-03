@@ -24,44 +24,24 @@ package com.jun._392判断子序列;
  * @author Jun
  * @date 2020/6/30 下午9:26
  */
-public class _392判断子序列 {
+public class _392判断子序列_2 {
 
-    /* 递归
+    /*
         这个题目的思路是双指针
         s t 分别有一个指针记录 位置
         s 利用天然的 下标索引 作为指针 记录 s 字符位置
         t 定义 location 作为 指针 记录 t 的位置
     */
     public static boolean isSubsequence(String s, String t) {
-        if (!s.trim().equals("") && t.trim().equals("")) {
-            return false;
-        }
+        if (s == null || t == null) return true;
 
-        if (s.trim().equals("") && t.trim().equals("")) {
-            return true;
-        }
-
+        int sLength = s.length();
         int location = -1;
-        for (int i = 0; i < s.length(); i++) {
-            // 如果可以进入一级循环中 说明 s 有效
-            // 在 s 有效的情况下，t 已经无效了，说明 结果也就无效了
-            if (location >= t.length() - 1) {
-                return false;
-            }
-            for (int j = location + 1; j < t.length(); j++) {
-                char sChar = s.charAt(i);
-                char tChar = t.charAt(j);
 
-                if (sChar == tChar) {
-                    location = j;
-                    break;
-                }
+        for (int i = 0; i < sLength; i++) {
+            location = t.indexOf(s.charAt(i), location + 1);
 
-                // 在 s 的一个字符已到达 t 的末尾，说明 s 不是 t 的子串
-                if (sChar != tChar && j == t.length() - 1) {
-                    return false;
-                }
-            }
+            if (location < 0) return false;
         }
 
         return true;
