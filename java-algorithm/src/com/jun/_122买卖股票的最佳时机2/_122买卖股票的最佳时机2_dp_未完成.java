@@ -41,11 +41,8 @@ package com.jun._122买卖股票的最佳时机2;
  * @author Jun
  * @date 2020/6/29 下午4:50
  */
-public class _122买卖股票的最佳时机2_dp {
-    /*
-        我对贪心算法的理解：
-            贪得无厌，没有耐心，见好就收，每走一步，只要就好处就走，从每一小步积累到整个规模，从而获取最大利益。
-     */
+public class _122买卖股票的最佳时机2_dp_未完成 {
+
     public static int maxProfit(int[] prices) {
         if (prices == null) {
             return 0;
@@ -53,7 +50,8 @@ public class _122买卖股票的最佳时机2_dp {
 
         int n = prices.length;
 
-        int dp
+//        int dp = new int[][];
+        return 0;
     }
 
     public static void main(String[] args) {
