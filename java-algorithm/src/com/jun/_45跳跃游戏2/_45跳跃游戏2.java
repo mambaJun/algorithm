@@ -25,14 +25,45 @@ package com.jun._45跳跃游戏2;
  * @date 2020/7/3 下午11:39
  */
 public class _45跳跃游戏2 {
+
+    /*
+        和 跳跃游戏 游戏的区别在于，跳跃游戏2 总能到达结尾，跳跃游戏就不一定了，毕竟两个问题的侧重点不在一起
+
+        这个题目也是用的 贪心算法的思路，沿用的是 跳跃游戏的思路，每次跳最远的距离
+           maxPostion 标记 跳跃的最远距离
+                具体意思是：从 [0,i] 中 最远可以跳 maxPostion
+           end 边界，用来计算步数的，因为题目是最少步数，所以等到 i == end 时候才更新 end
+                遇到边界，就更新边界，并且步数加一
+        因为这个题目是最小距离：
+        end 是 整个过程中 一个 局部最远标记，
+        i == end 是 已经跳到 过程中的最远标记，
+        此时更新 end , 是为了用最少的步走最远
+
+        试想如果题目是求最多步数的话，同样也是贪心思路，只不过将 max 改成 min即可
+
+    */
     public static int jump(int[] nums) {
-        int step = nums.length;
+        int length = nums.length;
+        int end = 0;
+        int maxPosition = 0;
+        int steps = 0;
+        for (int i = 0; i < length - 1; i++) {
+            // 跳跃的最远距离
+            maxPosition = Math.max(maxPosition, i + nums[i]);
+            if (i == end) {
+                end = maxPosition;
+                // 遇到边界，就更新边界，并且步数加一
+                steps++;
 
-        int[] dp = new int[nums.length];
-
-
-        return step;
+                // 优化 如果边界已经 到达最后的话，说明当前步数最小
+                if (end >= length - 1) {
+                    return steps;
+                }
+            }
+        }
+        return steps;
     }
+
 
     public static void main(String[] args) {
         int[] nums = new int[]{2, 3, 1, 1, 4};
