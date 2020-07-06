@@ -1,7 +1,5 @@
 package com.jun._134加油站;
 
-import javax.swing.*;
-
 /**
  * 在一条环路上有 N 个加油站，其中第 i 个加油站有汽油 gas[i] 升。
  * <p>
@@ -53,8 +51,18 @@ import javax.swing.*;
  * @author Jun
  * @date 2020/7/5 下午8:44
  */
-public class _134加油站 {
-
+public class _134加油站_暴力 {
+    /*
+        算法描述 - 暴力破解
+        通过遍历每一个位置作为起始点，在过程中如果发现不可以的话，换下一个。
+        同理，从 0 - n-1
+        count 用来统计 第几次 在 起始点，默认为0次，刚进入程序中 count++,默认1次，这里也符合逻辑
+        在这个过程中如果不行的话，立即退出，换下一个为起始点
+        如果 count == 2，说明已经遍历一圈
+            当前站点的净油量：gas[location] - cost[location]
+            油箱里的油量：sum += gas[location] - cost[location]
+            如果sum < 0 ，说明不能继续进行
+     */
     public static int canCompleteCircuit(int[] gas, int[] cost) {
 
         int n = gas.length;
@@ -69,12 +77,36 @@ public class _134加油站 {
             int count = 0;
             // 遍历位置
             int location = i;
-            // 步长
-            int step = 0;
             // 油箱里油量
             int sum = 0;
 
+            // 第一次经过
             while (count < 2) {
+                // 在数组中，通过对数组的长度进行 模运算 实现 数组的循环
+                location = location % n;
+
+                //
+                sum += gas[location] - cost[location];
+
+                if (sum < 0) {
+                    break;
+                }
+
+                if (location++ == i) {
+                    count++;
+                }
+            }
+
+            // 第二次,说明已经遍历一圈了
+            if (count > 1) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    /*            while (count < 2) {
                 int index = location + step;
                 if (index == n - 1) {
                     step = -i;
@@ -97,16 +129,7 @@ public class _134加油站 {
                 }
 
                 step++;
-            }
-
-            // 第二次,说明已经遍历一圈了
-            if (location == i && count > 1) {
-                return i;
-            }
-        }
-
-        return -1;
-    }
+            }*/
 
     public static void main(String[] args) {
 //        int[] gas = {2, 3, 4};
