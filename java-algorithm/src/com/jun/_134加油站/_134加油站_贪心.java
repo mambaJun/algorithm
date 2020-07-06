@@ -51,49 +51,52 @@ package com.jun._134加油站;
  * @author Jun
  * @date 2020/7/5 下午8:44
  */
-public class _134加油站_暴力 {
+public class _134加油站_贪心 {
     /*
-        算法描述 - 暴力破解
-        通过遍历每一个位置作为起始点，在过程中如果发现不可以的话，换下一个。
-        同理，从 [0, n-1]
-        count 用来统计 第几次 在 起始点，默认为0次，刚进入程序中 count++,默认1次，这里也符合逻辑
-        在这个过程中如果不行的话，立即退出，换下一个为起始点
-        如果 count == 2，说明已经遍历一圈
-            当前站点的净油量：gas[location] - cost[location]
-            油箱里的油量：sum += gas[location] - cost[location]
-            如果sum < 0 ，说明不能继续进行
+        算法描述 - 贪心
+        total：累计 油桶的油量，可行的话 total 一定 total >= 0,否则一定不会成功转一圈，返回 -1
+            总剩余量<0，说明汽油不足以绕一圈，无解，否则一定有解
+        start：标记 符合条件的 起始站
+        sum：以某个起始站 开始 累计，判断 该 加油站是不是可行，不行的话换下一个
      */
     public static int canCompleteCircuit(int[] gas, int[] cost) {
+        int total = 0;
+        int start = 0;
+        int sum = 0;
 
-        // 遍历 n 个 加油站，每一个尝试作为初始站点
         for (int i = 0; i < gas.length; i++) {
-            if (cost[i] > gas[i]) continue;
+            total += gas[i] - cost[i];
 
-            // 第几次在 i 原位置
-            int count = 0;
-            // 遍历位置
-            int location = i;
-            // 油箱里油量
-            int sum = 0;
-
-            // 第一次经过
-            while (count < 2) {
-                // 在数组中，通过对数组的长度进行 模运算 实现 数组的循环
-                location = location % gas.length;
-
-                // 油箱里的油量，若小于0 则不到 下一站
-                sum += gas[location] - cost[location];
-
-                if (sum < 0) break;
-
-                if (location++ == i) count++;
+            if (sum < 0) {
+                sum = gas[i] - cost[i];
+                start = i;
+            } else {
+                sum += gas[i] - cost[i];
             }
-
-            // 第二次,说明已经遍历一圈了
-            if (count > 1) return i;
         }
 
-        return -1;
+/*
+        这两个 方法的区别在于 先计算 sum 还是先 判断 sum < 0
+        1、先计算的话，更新 state = i + 1
+            sum = 0，因为 state 已经提前更新为 i + 1，所以直接默认 0即可
+        2、先判断的话，更新 state = i
+            sum = gas[i] - cost[i] 用来作为下一次的 是否可行的判断条件
+        小结：
+            这两个种方法的思想都是一样的，只不过是细节实现上有小小不同而已
+
+
+        for (int i = 0; i < gas.length; i++) {
+            total += gas[i] - cost[i];
+            sum += gas[i] - cost[i];
+
+            if (sum < 0) {
+                start = i + 1;
+                sum = 0;
+            }
+        }
+*/
+
+        return total >= 0 ? start : -1;
     }
 
     public static void main(String[] args) {
@@ -103,8 +106,21 @@ public class _134加油站_暴力 {
 //        int[] gas = {1, 2, 3, 4, 5};
 //        int[] cost = {3, 4, 5, 1, 2};
 
-        int[] gas = {5, 1, 2, 3, 4};
-        int[] cost = {4, 4, 1, 5, 1};
+/*        int[] gas = {5, 1, 2, 3, 4};
+        int[] cost = {4, 4, 1, 5, 1};*/
+
+        int[] gas = {1, 2, 3, 4, 5};
+        int[] cost = {3, 4, 5, 1, 2};
+
+/*
+    输入:
+    []
+    []
+    输出
+    4
+    预期结果
+    3
+*/
 
         System.out.println(canCompleteCircuit(gas, cost));
     }
