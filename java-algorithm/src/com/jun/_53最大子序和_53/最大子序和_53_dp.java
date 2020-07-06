@@ -4,7 +4,7 @@ package com.jun._53最大子序和_53;
  * @author Jun
  * @date 2020/2/2 下午12:53
  */
-public class 最大子序和_53_动态规划 {
+public class 最大子序和_53_dp {
     public static void main(String[] args) {
         int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
 //        int[] nums = {-2, -1};
