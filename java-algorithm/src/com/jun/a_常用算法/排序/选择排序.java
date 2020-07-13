@@ -11,7 +11,9 @@ public class 选择排序 {
         for (int i = 0; i < n; i++) {
             int min = i;
             for (int j = i + 1; j < n; j++) {
-                if (less(a[i],a[]))
+                if (less(a[i], a[j])) {
+
+                }
             }
 
         }
