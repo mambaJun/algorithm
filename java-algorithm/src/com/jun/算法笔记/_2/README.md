@@ -46,3 +46,33 @@ private static void swap(int[] nums, int i, int j) {
     nums[j] = tmp;
 }
 ```
+### 希尔排序
+希尔排序 是 插入排序的增强版
+利用 h ,一步步的使数组有更多的 顺序 子序列，从而提高速度
+```java
+private static void sort(int[] nums) {
+    int n = nums.length;
+
+    int h = 1;
+    while (h < n / 3) {
+        h = 3 * h + 1;
+    }
+    while (h >= 1) {
+        System.out.println(h);
+        for (int i = h; i < n; i++) {
+            for (int j = i; j >= h && nums[j] < nums[j - h]; j -= h) {
+                swap(nums, j, j - h);
+            }
+
+        }
+        
+        h /= 3;
+    }
+}
+
+private static void swap(int[] nums, int i, int j) {
+    int tmp = nums[i];
+    nums[i] = nums[j];
+    nums[j] = tmp;
+}
+```

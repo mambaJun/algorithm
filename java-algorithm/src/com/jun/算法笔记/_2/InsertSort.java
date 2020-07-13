@@ -1,4 +1,4 @@
-package com.jun.a_常用算法.排序;
+package com.jun.算法笔记._2;
 
 /**
  * @author Jun
