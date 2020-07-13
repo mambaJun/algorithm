@@ -37,7 +37,7 @@ import com.jun.util.ArrayUtil;
  * @author Jun
  * @date 2020/5/11 下午12:09
  */
-public class _63不同路径2_动态规划 {
+public class _63不同路径2_dp {
 
     public static int optimization(int[][] obstacleGrid) {
         int R = obstacleGrid.length;

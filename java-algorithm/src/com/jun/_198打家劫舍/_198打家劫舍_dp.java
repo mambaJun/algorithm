@@ -27,7 +27,7 @@ import com.jun.util.ArrayUtil;
  * @author Jun
  * @date 2020/5/21 下午1:12
  */
-public class _198打家劫舍_动态规划 {
+public class _198打家劫舍_dp {
     /**
      * 这里先把 初始状态的 给设置了,对于这个题目来说 dp[0]和dp[1]算是初始状态
      * 思路还是从小规模到大规模,每个规模上都求出 最大值,到结果自然而然的就是结果了
