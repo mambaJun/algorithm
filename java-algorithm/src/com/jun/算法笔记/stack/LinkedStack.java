@@ -4,7 +4,7 @@ package com.jun.算法笔记.stack;
  * @author: Jun
  * @date: 2020/7/11 20:10
  */
-public class LinkedStack<T> implements StackInterface<T> {
+public class LinkedStack<T> implements StackInterface<T>{
 
     public static void main(String[] args) {
         LinkedStack<String> stringLinkedStack = new LinkedStack<>();
