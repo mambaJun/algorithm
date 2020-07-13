@@ -1,4 +1,4 @@
-package com.jun.算法笔记.stack;
+package com.jun.算法笔记._1.stack;
 
 /**
  * @author: Jun

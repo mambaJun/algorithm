@@ -1,4 +1,4 @@
-package com.jun.算法笔记;
+package com.jun.算法笔记._1.stack;
 
 import edu.princeton.cs.algs4.Stack;
 import edu.princeton.cs.algs4.StdIn;

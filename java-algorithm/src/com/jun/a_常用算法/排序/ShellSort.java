@@ -1,54 +1,33 @@
 package com.jun.a_常用算法.排序;
 
 /**
- * @author: Jun
- * @date: 2020/7/13 20:10
+ * @author Jun
+ * @date 2020/7/13 下午3:58
  */
 public class ShellSort {
-    public static void main(String[] args) {
-        int[] nums = {2, 1, 3, 5, 7, 3, 2};
-        sort(nums);
-        print(nums);
-    }
-
-    private static void print(int[] nums) {
-        for (int i = 0; i < nums.length; i++) {
-            System.out.printf("%d ", nums[i]);
-        }
-        System.out.println();
-    }
-
-    /*
-        希尔排序 是 插入排序的增强版
-        利用 h ,使用 数组有更多的 顺序 子序列，从而提高速度
-    */
-    private static void sort(int[] nums) {
-        int n = nums.length;
+    public static void sort(Comparable[] a) {
+        int n = a.length;
 
         int h = 1;
         while (h < n / 3) {
-            h = 3 * h + 1;
+            h = h * 3 + 1;
         }
         while (h >= 1) {
-            System.out.println(h);
             for (int i = h; i < n; i++) {
-                for (int j = i; j >= h && nums[j] < nums[j - h]; j -= h) {
-                    swap(nums, j, j - h);
+                for (int j = i; j >= h && less(a[j], a[j - h]); j -= h) {
+                    exch(a, j, j - h);
                 }
-                print(nums);
-                System.out.println("---------------------------");
             }
-            print(nums);
-            System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
-            h /= 3;
         }
     }
 
-    private static void swap(int[] nums, int i, int j) {
-        int tmp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = tmp;
+    public static void exch(Comparable[] a, int i, int j) {
+        Comparable tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
     }
 
-
+    public static boolean less(Comparable a, Comparable b) {
+        return a.compareTo(b) < 0;
+    }
 }

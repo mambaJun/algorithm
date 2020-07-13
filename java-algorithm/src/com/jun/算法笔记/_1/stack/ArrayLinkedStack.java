@@ -1,7 +1,4 @@
-package com.jun.算法笔记.stack;
-
-import java.util.List;
-import java.util.Objects;
+package com.jun.算法笔记._1.stack;
 
 /**
  * @author: Jun
