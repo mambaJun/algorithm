@@ -1,4 +1,4 @@
-package com.jun.算法笔记.queue;
+package com.jun.算法笔记._1.queue;
 
 /**
  * @author: Jun

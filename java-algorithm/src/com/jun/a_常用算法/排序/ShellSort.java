@@ -1,19 +1,23 @@
 package com.jun.a_常用算法.排序;
 
 /**
- * @author: Jun
- * @date: 2020/7/13 9:47
+ * @author Jun
+ * @date 2020/7/13 下午3:58
  */
-public class 选择排序 {
-
+public class ShellSort {
     public static void sort(Comparable[] a) {
         int n = a.length;
-        for (int i = 0; i < n; i++) {
-            int min = i;
-            for (int j = i + 1; j < n; j++) {
-                if (less(a[i],a[]))
-            }
 
+        int h = 1;
+        while (h < n / 3) {
+            h = h * 3 + 1;
+        }
+        while (h >= 1) {
+            for (int i = h; i < n; i++) {
+                for (int j = i; j >= h && less(a[j], a[j - h]); j -= h) {
+                    exch(a, j, j - h);
+                }
+            }
         }
     }
 
@@ -25,9 +29,5 @@ public class 选择排序 {
 
     public static boolean less(Comparable a, Comparable b) {
         return a.compareTo(b) < 0;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

@@ -1,4 +1,4 @@
-package com.jun.算法笔记.stack;
+package com.jun.算法笔记._1.stack;
 
 /**
  * 定义 Stack 的基本接口
