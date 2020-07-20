@@ -20,7 +20,7 @@ package com.jun._2两数相加;
  * @author Jun
  * @date 2020/7/19 下午11:26
  */
-public class _2两数相加 {
+public class _2两数相加_improve_1 {
     /**
      * Definition for singly-linked list.
      * public class ListNode {
@@ -54,62 +54,39 @@ public class _2两数相加 {
         printList(plusResult);
     }
 
+
     /*
-        模拟 数学进位运算，用 tmp 表示进位数值，然后链表转置
-        improve_1 代码优化
+        将 逻辑且 改成 了 逻辑非，从而将 相同代码 改为 只剩一个地方
+        用 有头链表，后插法，构建结果链表
     */
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode p = l1;
+        ListNode q = l2;
+        ListNode head = new ListNode(0);
+        ListNode tail = head;
 
-        ListNode head = null;
-        ListNode resultHead = head;
-        ListNode tmpL1 = l1;
-        ListNode tmpL2 = l2;
+        int carry = 0;
 
-        int tmp = 0;
-        while (tmpL1 != null && tmpL2 != null) {
-            int result = tmpL1.val + tmpL2.val + tmp;
-//            System.out.println("1 - result=" + result);
-            ListNode newNode = new ListNode(result % 10);
-            newNode.next = resultHead;
-            resultHead = newNode;
+        while (p != null || q != null) {
+            int x = p != null ? p.val : 0;
+            int y = q != null ? q.val : 0;
+            int sum = carry + x + y;
 
-            tmp = result / 10;
-            tmpL1 = tmpL1.next;
-            tmpL2 = tmpL2.next;
+            carry = sum / 10;
+            tail.next = new ListNode(sum % 10);
+            tail = tail.next;
+
+            p = p != null ? p.next : null;
+            q = q != null ? q.next : null;
         }
-        while (tmpL1 != null) {
-            int result = tmpL1.val + tmp;
-//            System.out.println("2 - result=" + result);
-            ListNode newNode = new ListNode(result % 10);
-            newNode.next = resultHead;
-            resultHead = newNode;
 
-            tmp = result / 10;
-            tmpL1 = tmpL1.next;
+        if (carry > 0) {
+            tail.next = new ListNode(carry);
         }
-        while (tmpL2 != null) {
-            int result = tmpL2.val + tmp;
-//            System.out.println("3 - result=" + result);
-            ListNode newNode = new ListNode(result % 10);
-            newNode.next = resultHead;
-            resultHead = newNode;
 
-            tmp = result / 10;
-            tmpL2 = tmpL2.next;
-            System.out.println(3);
-        }
-        if (tmp > 0) {
-            int result = tmp;
-            System.out.println("3 - result=" + result);
-            ListNode newNode = new ListNode(result % 10);
-            newNode.next = resultHead;
-            resultHead = newNode;
-        }
-        printList(resultHead);
-        resultHead = convertList(resultHead);
-
-        return resultHead;
+        return head.next;
     }
+
 
     public static void printList(ListNode head) {
         ListNode tmpHead = head;
@@ -121,19 +98,6 @@ public class _2两数相加 {
             tmpHead = tmpHead.next;
         }
         System.out.println();
-    }
-
-    public static ListNode convertList(ListNode head) {
-        ListNode current = head;
-        ListNode next = null;
-        ListNode result = null;
-        while (current != null) {
-            next = current.next;
-            current.next = result;
-            result = current;
-            current = next;
-        }
-        return result;
     }
 
     public static ListNode createList(int[] nums) {
