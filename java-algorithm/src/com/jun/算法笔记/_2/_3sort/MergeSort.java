@@ -29,7 +29,7 @@ public class MergeSort {
         System.out.println();
     }
 
-    private static void sort(int[] nums, int start, int end) {
+    public static void sort(int[] nums, int start, int end) {
         System.out.printf("sort(int[] nums, int %d, int %d)\n", start, end);
         print(nums, start, end);
 
@@ -44,9 +44,7 @@ public class MergeSort {
     public static void merge(int[] nums, int start, int mid, int end) {
         System.out.printf("\tmerge(int[] nums, int %d, int %d, int %d)\n", start, mid, end);
         print(nums, start, end);
-        // 左数组的起点
         int left = start;
-        // 右数组的起点
         int right = mid + 1;
 
         for (int i = start; i <= end; i++) {
