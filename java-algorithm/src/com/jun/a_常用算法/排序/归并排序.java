@@ -33,6 +33,19 @@ package com.jun.a_常用算法.排序;
  */
 public class 归并排序 {
 
+    public static void main(String[] args) {
+        int[] nums = {2, 3, 2, 7, 8, 4, 3, 2, 1, 0};
+        mergeSort(nums, 0, nums.length, new int[nums.length]);
+        print(nums);
+    }
+
+    private static void print(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            System.out.printf("%d ", nums[i]);
+        }
+        System.out.println();
+    }
+
     public static void merge(int[] arr, int s, int m, int e, int[] tmp) {
         int beginIndex = 0;
         int left = s;
