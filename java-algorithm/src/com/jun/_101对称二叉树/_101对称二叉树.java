@@ -40,6 +40,9 @@ public class _101对称二叉树 {
         }
     }
 
+    /*
+        画图很直观，对称遍历
+    */
     public boolean isSymmetric(TreeNode root) {
         if (root == null) return true;
         return isSymmetric(root.left, root.right);

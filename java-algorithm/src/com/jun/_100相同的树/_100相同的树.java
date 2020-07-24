@@ -18,6 +18,9 @@ public class _100相同的树 {
         }
     }
 
+    /*
+        同步遍历
+    */
     public static boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null || q == null) return p == null && q == null;
         if (p.val != q.val) return false;
