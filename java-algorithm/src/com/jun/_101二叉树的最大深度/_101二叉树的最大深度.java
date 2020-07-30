@@ -1,5 +1,6 @@
 package com.jun._101二叉树的最大深度;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -52,6 +53,7 @@ public class _101二叉树的最大深度 {
         queue.offer(root);
         int ans = 0;
         while (!queue.isEmpty()) {
+            // 获取当前层的 节点个数
             int size = queue.size();
             while (size > 0) {
                 TreeNode node = queue.poll();
@@ -66,6 +68,18 @@ public class _101二叉树的最大深度 {
 /*        if (root == null) return 0;
 
         return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;*/
+    }
+
+    public static int minDepth(TreeNode root) {
+        if (root == null) return 0;
+
+        if (root.left == null && root.right == null) return 1;
+
+        int min_depth = Integer.MAX_VALUE;
+        if (root.left != null) min_depth = minDepth(root.left);
+        if (root.right != null) min_depth = minDepth(root.right);
+
+        return min_depth + 1;
     }
 
 }
