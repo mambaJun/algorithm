@@ -1,6 +1,8 @@
 package com.jun._51N皇后;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
@@ -36,34 +38,34 @@ import java.util.*;
  * @author Jun
  * @date 2020/8/3 下午10:53
  */
-public class _51N皇后 {
+public class _52N皇后2 {
     public static void main(String[] args) {
-        List<List<String>> lists = solveNQueens(4);
-        outputResult(lists);
+        System.out.println(totalNQueens(4));
     }
 
-    public static List<List<String>> solveNQueens(int n) {
-        List<List<String>> result = new ArrayList<>();
+    private static int count = 0;
+
+    public static int totalNQueens(int n) {
 
         // 下标索引当做行数 值当做列数 初始值全为 -1
         int[] columns = new int[n];
 
         Arrays.fill(columns, -1);
-        dfs(result, columns, 0, n);
+        dfs(columns, 0, n);
 
-        return result;
+        return count;
     }
 
     /**
      * 深搜 +　回溯 + 剪枝
-     * @param result    存放结果的结果集
-     * @param columns   一轮结果的存放 路径
-     * @param row       当前是第几行
-     * @param n         一共多少行
+     *
+     * @param columns 一轮结果的存放 路径
+     * @param row     当前是第几行
+     * @param n       一共多少行
      */
-    private static void dfs(List<List<String>> result, int[] columns, int row, int n) {
+    private static void dfs(int[] columns, int row, int n) {
         if (row == n) {
-            result.add(new ArrayList<>(pathToResult(columns)));
+            count++;
             return;
         }
 
@@ -75,7 +77,7 @@ public class _51N皇后 {
             // 更新当前行 列的位置
             columns[row] = i;
             // 下一行进行深搜
-            dfs(result, columns, row + 1, n);
+            dfs(columns, row + 1, n);
             // 回溯 回退当前行 的状态到 看作未曾到
             columns[row] = -1;
 
@@ -94,37 +96,6 @@ public class _51N皇后 {
             }
         }
         return false;
-    }
-
-    /**
-     * 根据结果下标 转换成 结果集
-     *
-     * @return
-     */
-    private static List<String> pathToResult(int[] columns) {
-        List<String> result = new ArrayList<>();
-        if (columns.length == 0) {
-            return result;
-        }
-        for (int i = 0; i < columns.length; i++) {
-            result.add(getResultString(columns[i], columns.length));
-        }
-        return result;
-    }
-
-    /**
-     * 根据 index 生成 ..Q.
-     *
-     * @param index Q位置
-     * @param n     字符串 长度
-     * @return
-     */
-    private static String getResultString(Integer index, int n) {
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < n; i++) {
-            builder.append(i == index ? "Q" : ".");
-        }
-        return builder.toString();
     }
 
     /**
