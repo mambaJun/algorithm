@@ -42,10 +42,10 @@ public class _336回文对_trie {
         // 字典树的插入，注意维护每个节点上的两个列表
         for (int i = 0; i < n; i++) {
             String rev = new StringBuilder(words[i]).reverse().toString();
-            Node current = root;
-            if (isPalindrome(rev.substring(0))) {
-                current.suffixs.add(i);
-            }
+//            Node current = root;
+//            if (isPalindrome(rev.substring(0))) {
+//                current.suffixs.add(i);
+//            }
         }
 
 
