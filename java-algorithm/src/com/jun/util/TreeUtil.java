@@ -17,10 +17,11 @@ public class TreeUtil {
         }
     }
 
-    public static createTree(int[] nodes) {
+    public static TreeNode createTree(int[] nodes) {
         if (nodes == null || nodes.length == 0) return null;
 
         TreeNode root = new TreeNode(nodes[0]);
 
+        return null;
     }
 }

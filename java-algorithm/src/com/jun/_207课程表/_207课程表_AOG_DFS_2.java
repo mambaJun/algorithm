@@ -39,9 +39,10 @@ public class _207课程表_AOG_DFS_2 {
         // 创建邻接表
         edges = new ArrayList<>();
         for (int i = 0; i < numCourses; i++) {
-            edges.add(new ArrsyList<>());
+            edges.add(new ArrayList<>());
         }
         visited = new int[numCourses];
 
+        return true;
     }
 }
