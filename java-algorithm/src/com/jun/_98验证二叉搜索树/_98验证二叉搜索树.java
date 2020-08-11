@@ -1,6 +1,8 @@
 package com.jun._98验证二叉搜索树;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -8,6 +10,9 @@ import java.util.Map;
  * @date 2020/8/6 下午10:33
  */
 public class _98验证二叉搜索树 {
+
+    public static void main(String[] args) {
+    }
 
     // hash 表存储 节点
     private Map<TreeNode, Boolean> memory = new HashMap<>();
