@@ -1,5 +1,7 @@
 package com.jun._130被围绕的区域;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -82,39 +84,79 @@ public class _130被围绕的区域_DFS_迭代 {
     }
 
     private static void dfs(char[][] board, int i, int j) {
+
+//        if (i < 0 || j < 0 || i >= rows || j >= columns || board[i][j] == X || board[i][j] == mark) return;
+
         Stack<Pos> stack = new Stack<>();
-        stack.push(new Pos(i, j));
+        // 标记成 #
         board[i][j] = mark;
-        int m = board.length;
-        int n = board[0].length;
+        stack.push(new Pos(i, j));
+        int rows = board.length;
+        int columns = board[0].length;
         while (!stack.isEmpty()) {
-//            Pos current = stack.peek();
-            Pos current = stack.pop();
-            // up
+            Pos current = stack.peek();
+            //  上
             if (current.i - 1 >= 0 && board[current.i - 1][current.j] == O) {
                 stack.push(new Pos(current.i - 1, current.j));
                 board[current.i - 1][current.j] = mark;
 //                continue;
             }
-            // down
-            if (current.i + 1 < m && board[current.i + 1][current.j] == O) {
+            // 下
+            if (current.i + 1 < rows && board[current.i + 1][current.j] == O) {
                 stack.push(new Pos(current.i + 1, current.j));
                 board[current.i + 1][current.j] = mark;
 //                continue;
             }
-            // right
+            // 左
             if (current.j - 1 >= 0 && board[current.i][current.j - 1] == O) {
                 stack.push(new Pos(current.i, current.j - 1));
                 board[current.i][current.j - 1] = mark;
 //                continue;
             }
-            // left
-            if (current.j + 1 < n && board[current.i][current.j + 1] == O) {
+            // 右
+            if (current.j + 1 < columns && board[current.i][current.j + 1] == O) {
                 stack.push(new Pos(current.i, current.j + 1));
                 board[current.i][current.j + 1] = mark;
 //                continue;
             }
-//            stack.pop();
+            stack.pop();
         }
     }
+
+//    private static void dfs(char[][] board, int i, int j) {
+//        Stack<Pos> stack = new Stack<>();
+//        stack.push(new Pos(i, j));
+//        board[i][j] = mark;
+//        int m = board.length;
+//        int n = board[0].length;
+//        while (!stack.isEmpty()) {
+////            Pos current = stack.peek();
+//            Pos current = stack.pop();
+//            // up
+//            if (current.i - 1 >= 0 && board[current.i - 1][current.j] == O) {
+//                stack.push(new Pos(current.i - 1, current.j));
+//                board[current.i - 1][current.j] = mark;
+////                continue;
+//            }
+//            // down
+//            if (current.i + 1 < m && board[current.i + 1][current.j] == O) {
+//                stack.push(new Pos(current.i + 1, current.j));
+//                board[current.i + 1][current.j] = mark;
+////                continue;
+//            }
+//            // right
+//            if (current.j - 1 >= 0 && board[current.i][current.j - 1] == O) {
+//                stack.push(new Pos(current.i, current.j - 1));
+//                board[current.i][current.j - 1] = mark;
+////                continue;
+//            }
+//            // left
+//            if (current.j + 1 < n && board[current.i][current.j + 1] == O) {
+//                stack.push(new Pos(current.i, current.j + 1));
+//                board[current.i][current.j + 1] = mark;
+////                continue;
+//            }
+////            stack.pop();
+//        }
+//    }
 }

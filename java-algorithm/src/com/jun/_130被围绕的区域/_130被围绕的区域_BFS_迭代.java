@@ -47,6 +47,7 @@ public class _130被围绕的区域_BFS_迭代 {
         }
     }
 
+
     public static void solve(char[][] board) {
         if (board == null || board.length == 0) return;
         int m = board.length;
@@ -67,6 +68,11 @@ public class _130被围绕的区域_BFS_迭代 {
             }
         }
     }
+
+    /*
+        深搜 用 Stack 一路压栈 不出， 直到无路可走，栈内容 就是 深搜 路径
+        广搜 用 Queue 一路 入队 ，入队 就是广搜的表现，同时出队，当队空时，就是广搜 完毕的时候
+    */
 
     private static void bfs(char[][] board, int i, int j) {
         Queue<Pos> queue = new LinkedList<>();
