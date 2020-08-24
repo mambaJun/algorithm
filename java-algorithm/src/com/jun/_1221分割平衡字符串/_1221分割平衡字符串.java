@@ -45,9 +45,11 @@ public class _1221分割平衡字符串 {
 //        String s = "RLRRLLRLRL";
 //        String s = "RLLLLRRRLR";
         String s = "RLRRRLLRLL";
+//        String s = "RLLLLRRRLR";
 //        String s = "LLLLRRRR";
 
         System.out.println(balancedStringSplit(s));
+//        System.out.println(balancedStringSplit1(s));
     }
 
     public static int balancedStringSplit(String s) {
@@ -55,55 +57,35 @@ public class _1221分割平衡字符串 {
         if (s == null || s.length() == 0) return count;
 
         int n = s.length();
-        // 字符串起点
-        int start = 0;
-        // 左边 数量
-        int left = 0;
-        // 右边数量
-        int right = 0;
-        // false-左       true-右
-        boolean flag = false;
 
-        char mark = s.charAt(0);
+        int balance = 0;
 
-        for (int i = 0; i < n && start < n; i++) {
+        for (int i = 0; i < n; i++) {
             char ch = s.charAt(i);
-            // 左 到 右
-            if (ch != mark && !flag) {
-                right = 1;
-                flag = true;
-                mark = ch;
-                continue;
+            if (ch == 'L') balance++;
+            if (ch == 'R') balance--;
+            if (balance == 0) count++;
+        }
+
+        return count;
+    }
+
+    public static int balancedStringSplit1(String s) {
+        if (s == null || "".equals(s)) {
+            return 0;
+        }
+        int count = 0, diffCount = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == 'L') {
+                diffCount++;
+            } else {
+                diffCount--;
             }
-            // 右 到 左
-            if ((ch != mark || left < right) && flag) {
+            if (diffCount == 0) {
+                System.out.println(s.substring(0, i + 1));
                 count++;
-                mark = ch;
-                System.out.println(s.substring(start, start + left + right));
-                start += left + right;
-                left = 1;
-                right = 0;
-                flag = false;
-                continue;
-            }
-
-            //  左
-            if (ch == mark && !flag) {
-                left++;
-                continue;
-            }
-            //  右
-            if (ch == mark && flag) {
-                right++;
-                continue;
             }
         }
-
-        if (left > 0 && right > 0) {
-            System.out.println(s.substring(start, start + left + right));
-            count++;
-        }
-
         return count;
     }
 }
