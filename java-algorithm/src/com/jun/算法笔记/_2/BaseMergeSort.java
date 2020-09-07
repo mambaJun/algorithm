@@ -4,7 +4,7 @@ package com.jun.算法笔记._2;
  * @author: Jun
  * @date: 2020/7/14 12:27
  */
-public class MergeSort {
+public class BaseMergeSort {
     private static int[] aux;
 
     public static void main(String[] args) {
