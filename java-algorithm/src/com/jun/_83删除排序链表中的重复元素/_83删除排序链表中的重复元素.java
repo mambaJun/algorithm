@@ -33,6 +33,8 @@ public class _83删除排序链表中的重复元素 {
         int[] nums1 = {1, 1, 2, 3, 3};
         ListNode list = createList(nums1);
         printList(list);
+        ListNode resultList = deleteDuplicates(list);
+        printList(resultList);
     }
 
     public static void printList(ListNode head) {
@@ -57,13 +59,16 @@ public class _83删除排序链表中的重复元素 {
         return head;
     }
 
-    public ListNode deleteDuplicates(ListNode head) {
+    public static ListNode deleteDuplicates(ListNode head) {
         ListNode tail = head;
-        while (tail.next != null) {
+
+        while (tail != null && tail.next != null) {
             if (tail.val == tail.next.val) {
                 tail.next = tail.next.next;
+                continue;
+            } else {
+                tail = tail.next;
             }
-            tail = tail.next;
         }
         return head;
     }
