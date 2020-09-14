@@ -36,9 +36,8 @@ import java.util.Arrays;
  */
 public class _1025除数博弈 {
     public static boolean divisorGame(int N) {
-        /*
-            这个题，为啥每个人选择1最好，不明白，最大的收获就是 备忘录数组
-            动态规划
+        /**
+         * 这个题，为啥每个人选择1最好，不明白，最大的收获就是 备忘录数组
          */
         boolean[] dp = new boolean[N];
 
