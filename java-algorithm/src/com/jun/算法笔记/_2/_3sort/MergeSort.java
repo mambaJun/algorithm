@@ -1,4 +1,4 @@
-package com.jun.算法笔记._2;
+package com.jun.算法笔记._2._3sort;
 
 /**
  * @author: Jun
