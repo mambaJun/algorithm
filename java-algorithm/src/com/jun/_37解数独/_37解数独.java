@@ -1,51 +1,162 @@
 package com.jun._37解数独;
 
 /**
+ * 编写一个程序，通过已填充的空格来解决数独问题。
+ * <p>
+ * 一个数独的解法需遵循如下规则：
+ * <p>
+ * 数字 1-9 在每一行只能出现一次。
+ * 数字 1-9 在每一列只能出现一次。
+ * 数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。
+ * 空白格用 '.' 表示。
+ * <p>
+ * <p>
+ * <p>
+ * 一个数独。
+ * <p>
+ * <p>
+ * <p>
+ * 答案被标成红色。
+ * <p>
+ * Note:
+ * <p>
+ * 给定的数独序列只包含数字 1-9 和字符 '.' 。
+ * 你可以假设给定的数独只有唯一解。
+ * 给定数独永远是 9x9 形式的。
+ * <p>
+ * <p>
+ * 来源：力扣（LeetCode）
+ * 链接：https://leetcode-cn.com/problems/sudoku-solver
+ * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ *
  * @author: Jun
  * @date: 2020/9/15 9:18
  */
 public class _37解数独 {
-    // 回溯算法
-    public void solveSudoku(char[][] board) {
-        int rows = board.length;
-        int columns = board[0].length;
 
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) {
-                if (board[i][j] == '.') dfs(board, i, j);
+    /*
+    正确答案：
+    [
+        ["5","3","4","6","7","8","9","1","2"],
+        ["6","7","2","1","9","5","3","4","8"],
+        ["1","9","8","3","4","2","5","6","7"],
+        ["8","5","9","7","6","1","4","2","3"],
+        ["4","2","6","8","5","3","7","9","1"],
+        ["7","1","3","9","2","4","8","5","6"],
+        ["9","6","1","5","3","7","2","8","4"],
+        ["2","8","7","4","1","9","6","3","5"],
+        ["3","4","5","2","8","6","1","7","9"]
+    ]
+    [
+        ["5","3","4","6","7","8","9","1","2"],
+        ["6","7","2","1","9","5","3","4","8"],
+        ["1","9","8","3","4","2","5","6","7"],
+        ["8","5","9","7","6","1","4","2","3"],
+        ["4","2","6","8","5","3","7","9","1"],
+        ["7","1","3","9","2","4","8","5","6"],
+        ["9","6","1","5","3","7","2","8","4"],
+        ["2","8","7","4","1","9","6","3","5"],
+        ["3","4","5","2","8","6","1","7","9"]
+   ]
+
+    错误答案：
+    5 3 1 2 7 4 5 9 8
+    6 2 4 1 9 5 2 3 7
+    . 9 8 3 . 8 1 6 4
+    8 1 2 5 6 7 4 5 3
+    4 5 6 8 . 3 7 2 1
+    7 . 3 9 2 1 8 . 6
+    1 6 5 7 3 2 2 8 .
+    2 7 8 4 1 9 3 . 5
+    3 4 9 5 8 6 . 7 9
+    此时做的回溯 检查， 问题出在 了，仅仅考虑小规模，比如左上角的 九宫格， 原本已经有 9 ，此时的 . 竖直方向上还差一个 9，这样就冲突了
+
+    */
+    public static void main(String[] args) {
+        char[][] board = {
+                {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
+                {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+                {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+                {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+                {'4', '.', '.', '8', '.', '3', '.', '.', '1'},
+                {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+                {'.', '6', '.', '.', '.', '.', '2', '8', '.'},
+                {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+                {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
+        };
+
+        _37解数独 main = new _37解数独();
+        main.solveSudoku(board);
+
+        for (char[] chars : board) {
+            for (char aChar : chars) {
+                System.out.printf("%c ", aChar);
             }
+            System.out.println();
         }
     }
 
-    void dfs(char[][] board, int row, int column) {
-        char start = '1';
-        while ('9' - start >= 0) {
-            if (check(board, row, column, start)) board[row][column] = start;
+    // 回溯算法
+    // 棋盘搜索问题依然是要使用回溯法，暴力搜索，只不过这次我们要做的是双层递归。
+    public void solveSudoku(char[][] board) {
+        backTracking(board);
+    }
 
-            start++;
+    public boolean backTracking(char[][] board) {
+        int rows = board.length;
+        int columns = board[0].length;
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) { // 总感觉 每次 递归都是从头开始的 两次遍历有点不妥，未想出别的办法，先将就用
+                // 不为 .  跳过
+                if (board[i][j] != '.') continue;
+                // 从 1~9枚举
+                for (char num = '1'; num <= '9'; num++) {
+                    // 判断 num 是否符合 数独 条件
+                    if (check(board, i, j, num)) {
+                        // 回溯 前的 赋值操作
+                        board[i][j] = num;
+                        // 符合后，继续递归 ，直到结果全部符合
+                        if (backTracking(board)) return true;
+                        // 回溯法 此处应该好好体会，为什么？
+                        // 第一次操作对象是个 二维数组
+                        board[i][j] = '.';
+                    }
+                }
+                // 此时做的回溯 检查， 问题出在 了，仅仅考虑小规模，比如左上角的 九宫格， 原本已经有 9 ，此时的 . 竖直方向上还差一个 9，这样就冲突了
+                // 此处的返回就是应对上面的问题，触发 回溯 操作
+                return false;
+            }
         }
+        // 出口，每个位置上都 不是 .,此时 数独已经完成 ,直接绕开 两层否for ，返回 true
+        return true;
     }
 
     public boolean check(char[][] board, int row, int column, char num) {
         int rows = board.length;
         int columns = board[0].length;
         // 水平
-        for (int i = 0; i < rows; i++) {
-            if (i != row && board[row][i] == num) return false;
+        for (int i = 0; i < 9; i++) {
+            if (board[row][i] == num) {
+                return false;
+            }
         }
         // 垂直
-        for (int i = 0; i < columns; i++) {
-            if (i != column && board[i][column] == num) return false;
+        for (int i = 0; i < 9; i++) {
+            if (board[i][column] == num) {
+                return false;
+            }
         }
         // 九方格
         int startRow = row / 3 * 3;
         int startColumn = column / 3 * 3;
         for (int i = startRow; i < startRow + 3; i++) {
             for (int j = startColumn; j < startColumn + 3; j++) {
-                if (board[i][j] == num) return false;
+                if (board[i][j] == num) {
+                    return false;
+                }
             }
         }
-
         return true;
     }
 }
