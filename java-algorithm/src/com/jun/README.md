@@ -10,6 +10,8 @@
 | [剑指 Offer 59 - I. 滑动窗口的最大值](https://leetcode-cn.com/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof/) | 一个数组 `nums` 和滑动窗口的大小 `k`，请找出所有滑动窗口里的最大值 | 暴力/ **单调队列** | ***单调队列*** |
 | [208. 实现 Trie (前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/) | 实现一个 Trie (前缀树)，包含 `insert`, `search`, 和 `startsWith` 这三个操作。 | Trie树 |           |
 | [739. 每日温度](https://leetcode-cn.com/problems/daily-temperatures/) | 每日 `气温` 列表，重新生成一个列表。对应位置的输出为：要想观测到更高的气温，至少需要等待的天数。如果气温在这之后都不会升高，请在该位置用 `0` 来代替。 | 单调栈 |           |
+| [997. 找到小镇的法官](https://leetcode-cn.com/problems/find-the-town-judge/) | 小镇的法官不相信任何人。 每个人（除了小镇法官外）都信任小镇的法官。 只有一个人同时满足属性 1 和属性 2 。 | 有向图的出度/入度问题 | |
+| [75. 颜色分类](https://leetcode-cn.com/problems/sort-colors/) | 排序 | 排序 | |
 
 
 
