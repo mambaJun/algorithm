@@ -13,6 +13,7 @@
 | [997. 找到小镇的法官](https://leetcode-cn.com/problems/find-the-town-judge/) | 小镇的法官不相信任何人。 每个人（除了小镇法官外）都信任小镇的法官。 只有一个人同时满足属性 1 和属性 2 。 | 有向图的出度/入度问题 | |
 | [75. 颜色分类](https://leetcode-cn.com/problems/sort-colors/) | 排序 | 排序 | |
 | [797. 所有可能的路径](https://leetcode-cn.com/problems/all-paths-from-source-to-target/) | 给一个有 `n` 个结点的有向无环图，找到`所有`从 `0` 到 `n-1` 的路径并输出（不要求按顺序） | 有向图的DFS | |
+| [310. 最小高度树](https://leetcode-cn.com/problems/minimum-height-trees/) | 给出这样的一个图，写出一个函数找到所有的最小高度树并返回他们的根节点。 | 自下而上的广搜思路 | |
 
 
 
