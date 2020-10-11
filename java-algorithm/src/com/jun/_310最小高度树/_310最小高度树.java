@@ -99,22 +99,26 @@ public class _310最小高度树 {
         }
 
         Queue<Integer> queue = new LinkedList<>();
-        // 将 最外层的节点入队，此后每次入队的都是 当前意义上地叶子节点，
+        // 将 最外层的节点（入度为 1的节点）入队，此后每次入队的都是 当前意义上地叶子节点，
         for (int i = 0; i < n; i++) {
             if (indegree[i]-- == 1) queue.offer(i);
         }
 
+        // 经典的 BFS，写法
         while (!queue.isEmpty()) {
+            // 每一层 的节点集
             res = new ArrayList<>();
+            // 经典的 BFS，写法
             int size = queue.size();
             while (size-- > 0) {
                 int currentNode = queue.poll();
+                // 将当前节点 放入 当前层 集合中
                 res.add(currentNode);
+                // 获取 当前节点的 相邻节点，处理 他们的入度，如果是 1 也就是 叶子节点， 入队
                 List<Integer> neighbor = adj.get(currentNode);
                 for (Integer node : neighbor) {
-                    if (indegree[node]-- == 1) {
-                        queue.offer(node);
-                    }
+                    // 入度，如果是 1 也就是 叶子节点， 入队
+                    if (indegree[node]-- == 1) queue.offer(node);
                 }
             }
         }
