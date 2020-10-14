@@ -2,6 +2,7 @@ package com.jun._412移掉K位数字;
 
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Stack;
 
 /**
  * 给定一个以字符串表示的非负整数 num，移除这个数中的 k 位数字，使得剩下的数字最小。
@@ -37,17 +38,51 @@ import java.util.LinkedList;
 public class _412移掉K位数字_2 {
     public static void main(String[] args) {
 //        String num = "1432219";
-        String num = "10200";
+//        String num = "10200";
+//        int k = 3;
+        String num = "9";
         int k = 1;
         System.out.println(removeKdigits(num, k));
     }
 
     public static String removeKdigits(String num, int k) {
-        int len = num.length();
-        int digit = len - k;
-        if (digit == 0) return "0";
+        Deque<Character> stack = new LinkedList<>();
 
-        return "0";
+        // 入栈，一共出栈  k 次，代表 删除 了 k 个 元素
+        for (char digit : num.toCharArray()) {
+            //  栈 非空， 还未 删除 k 个元素（k > 0），栈头元素 大于 当前 比较 元素 -》 出栈
+            while (!stack.isEmpty() && k > 0 && stack.peekLast() > digit) {
+                //  出栈
+                stack.removeLast();
+                //  个数 减一
+                k--;
+            }
+            //  常规 入栈
+            stack.addLast(digit);
+        }
+
+        /*
+            9       1       栈空 入栈，却没有出栈
+            112     1       元素 是 一直递增，没有 满足 出栈的第三个 条件
+            这种例子 ，栈空 入栈，却没有出栈，这里做个 收尾 把关的
+         */
+        while (k-- > 0) stack.removeLast();
+
+        StringBuilder sb = new StringBuilder();
+
+        // 默认 有前导零
+        boolean leadingZero = true;
+        for (char digit : stack) {
+            //  去除前导0
+            if (leadingZero && digit == '0') continue;
+            leadingZero = false;
+            sb.append(digit);
+        }
+
+        String res = sb.toString();
+
+
+        return "".equals(res) ? "0" : res;
     }
 
 }
