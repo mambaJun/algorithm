@@ -14,6 +14,11 @@
 | [75. 颜色分类](https://leetcode-cn.com/problems/sort-colors/) | 排序 | 排序 | |
 | [797. 所有可能的路径](https://leetcode-cn.com/problems/all-paths-from-source-to-target/) | 给一个有 `n` 个结点的有向无环图，找到`所有`从 `0` 到 `n-1` 的路径并输出（不要求按顺序） | 有向图的DFS | |
 | [310. 最小高度树](https://leetcode-cn.com/problems/minimum-height-trees/) | 给出这样的一个图，写出一个函数找到所有的最小高度树并返回他们的根节点。 | 自下而上的广搜思路 | |
+| [763. 划分字母区间](https://leetcode-cn.com/problems/partition-labels/) | 把这个字符串划分为尽可能多的片段，同一个字母只会出现在其中的一个片段。 | 贪心 + 双指针 | 给一个 end 指针，使 end每次更新到当前遍历 字符 的最后出现的位置，直到 i == end ,表示 已经到现阶段的 子问题最优解了<br />优化问题，先将每个字符最后出现的位置 记录下来，省的后面每次都要去找，去除重复 |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
 
 
 
