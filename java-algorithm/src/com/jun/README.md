@@ -1,7 +1,7 @@
 # LeetCode刷题笔记
 
 | 题目序号 | 题目描述 | 解法/思路 | 注意/心得 |
-| :------: | :------: | :-------: | :-------: |
+| :------- | :------- | :-------- | :-------- |
 | [offer 48](https://leetcode-cn.com/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/)  | 请从字符串中找出一个**最长的不包含重复字符的子字符串**，计算该最长子字符串的长度. |   双指针/DP| int[] arr = new int[128];<br />利用 ASCII看作一个数组，进行统计 |
 | [offer 15二进制中1的个数](https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/) | 输入一个整数，输出该数二进制表示中 1 的个数 | 位运算 | Java中无符号右移K位，取最后一位<br />n >>> k & 1 |
 | [347. 前 K 个高频元素](https://leetcode-cn.com/problems/top-k-frequent-elements/) | 给定一个非空的整数数组，返回其中出现频率前 **k** 高的元素 | 堆 | 未完成 |
@@ -15,7 +15,7 @@
 | [797. 所有可能的路径](https://leetcode-cn.com/problems/all-paths-from-source-to-target/) | 给一个有 `n` 个结点的有向无环图，找到`所有`从 `0` 到 `n-1` 的路径并输出（不要求按顺序） | 有向图的DFS | |
 | [310. 最小高度树](https://leetcode-cn.com/problems/minimum-height-trees/) | 给出这样的一个图，写出一个函数找到所有的最小高度树并返回他们的根节点。 | 自下而上的广搜思路 | |
 | [763. 划分字母区间](https://leetcode-cn.com/problems/partition-labels/) | 把这个字符串划分为尽可能多的片段，同一个字母只会出现在其中的一个片段。 | 贪心 + 双指针 | 给一个 end 指针，使 end每次更新到当前遍历 字符 的最后出现的位置，直到 i == end ,表示 已经到现阶段的 子问题最优解了<br />优化问题，先将每个字符最后出现的位置 记录下来，省的后面每次都要去找，去除重复 |
-|  |  |  |  |
+| [547. 朋友圈](https://leetcode-cn.com/problems/friend-circles/) | 如果M[i][j] = 1，表示已知第 i 个和 j 个学生**互为**朋友关系，否则为不知道。你必须输出所有学生中的已知的朋友圈总数。 | 并查集/ DFS / BFS(未实现) |  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
