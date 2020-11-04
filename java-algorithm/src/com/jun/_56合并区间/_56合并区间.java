@@ -1,6 +1,7 @@
 package com.jun._56合并区间;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * 给出一个区间的集合，请合并所有重叠的区间。
@@ -41,8 +42,9 @@ public class _56合并区间 {
      */
 
     public static int[][] merge(int[][] intervals) {
-        Arrays.sort(intervals, (v1, v2) -> v1[0] - v2[0]);
 
+        Arrays.sort(intervals, (v1, v2) -> v1[0] - v2[0]);
+        
         int[][] result = new int[intervals.length][2];
         int index = -1;
         for (int[] interval : intervals) {
