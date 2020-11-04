@@ -16,7 +16,7 @@
 | [310. 最小高度树](https://leetcode-cn.com/problems/minimum-height-trees/) | 给出这样的一个图，写出一个函数找到所有的最小高度树并返回他们的根节点。 | 自下而上的广搜思路 | |
 | [763. 划分字母区间](https://leetcode-cn.com/problems/partition-labels/) | 把这个字符串划分为尽可能多的片段，同一个字母只会出现在其中的一个片段。 | 贪心 + 双指针 | 给一个 end 指针，使 end每次更新到当前遍历 字符 的最后出现的位置，直到 i == end ,表示 已经到现阶段的 子问题最优解了<br />优化问题，先将每个字符最后出现的位置 记录下来，省的后面每次都要去找，去除重复 |
 | [547. 朋友圈](https://leetcode-cn.com/problems/friend-circles/) | 如果M[i][j] = 1，表示已知第 i 个和 j 个学生**互为**朋友关系，否则为不知道。你必须输出所有学生中的已知的朋友圈总数。 | 并查集/ DFS / BFS(未实现) |  |
-|  |  |  |  |
+| [50. Pow(x, n)](https://leetcode-cn.com/problems/powx-n/) | 实现 pow(*x*, *n*) ，即计算 x 的 n 次幂函数。 | [快速幂O(logN)](https://leetcode-cn.com/problems/powx-n/solution/50-powx-n-kuai-su-mi-qing-xi-tu-jie-by-jyd/) |  |
 |  |  |  |  |
 |  |  |  |  |
 
