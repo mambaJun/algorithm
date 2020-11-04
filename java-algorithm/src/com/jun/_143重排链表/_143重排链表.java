@@ -45,25 +45,13 @@ public class _143重排链表 {
     }
 
     private static void printList(ListNode head) {
-        ListNode tmp = head;
-        while (tmp != null) {
-            System.out.printf(tmp.next == null ? "%d" : "%d->", tmp.val);
-            tmp = tmp.next;
-        }
-        System.out.println();
-    }
 
-    private static ListNode buildList(int n) {
+    static ListNode build(int n) {
         ListNode head = new ListNode(0, null);
         ListNode tail = head;
-        int i = 0;
-        while (++i <= n) {
-            ListNode node = new ListNode(i, null);
-            tail.next = node;
-            tail = tail.next;
-        }
-        return head.next;
-    }
+
+        for (int i = 1; i <= n; i++) {
+            tail.next = new ListNode(i, null);
 
 
     private static class ListNode {
@@ -82,4 +70,5 @@ public class _143重排链表 {
             this.next = next;
         }
     }
+
 }
