@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Prim 算法 使用了贪心的思想
- *      dist[j] = Math.min(dist[j], w[t][j]);
+ * dist[j] = Math.min(dist[j], w[t][j]);
  *
  * @author Jun
  * @date 2020/11/9 下午5:43
@@ -15,34 +15,6 @@ public class Prim {
     // 每个点距离树的距离, 刚开始　全都设置为　无穷，后面一步步更新　每个节点　距离　生成树的　距离
     static int[] dist = new int[n];
     static boolean[] used = new boolean[n];
-
-    public static void main(String[] args) {
-        init();
-        print();
-
-//        System.out.println(prim());
-        System.out.println(prim1());
-    }
-
-    private static void init() {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (i == j) {
-                    w[i][j] = 0;
-                    continue;
-                }
-                if (i < j) {
-                    int tmp = 0;
-                    while (tmp == 0) {
-                        tmp = (int) (Math.random() * 1000 / 123);
-                    }
-                    w[i][j] = tmp;
-                    continue;
-                }
-                w[i][j] = w[j][i];
-            }
-        }
-    }
 
     private static int prim() {
         int res = 0;
@@ -71,6 +43,34 @@ public class Prim {
             }
         }
         return res;
+    }
+
+    private static void init() {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i == j) {
+                    w[i][j] = 0;
+                    continue;
+                }
+                if (i < j) {
+                    int tmp = 0;
+                    while (tmp == 0) {
+                        tmp = (int) (Math.random() * 1000 / 123);
+                    }
+                    w[i][j] = tmp;
+                    continue;
+                }
+                w[i][j] = w[j][i];
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        init();
+        print();
+
+//        System.out.println(prim());
+        System.out.println(prim1());
     }
 
     private static int prim2() {
