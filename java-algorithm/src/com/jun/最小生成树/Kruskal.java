@@ -1,4 +1,4 @@
-package com.jun.最短路径;
+package com.jun.最小生成树;
 
 import java.util.Arrays;
 
