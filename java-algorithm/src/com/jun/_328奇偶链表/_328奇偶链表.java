@@ -34,7 +34,7 @@ class Solution {
         // tail 一直处在 fsasdfs爽肤水的方式史蒂芬孙
         ListNode tail = head;
 
-        while (tail != null && )
+//        while (tail != null && )
         return head;
     }
 
