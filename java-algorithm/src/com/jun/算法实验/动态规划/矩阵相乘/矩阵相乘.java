@@ -1,4 +1,4 @@
-package com.jun.矩阵相乘;
+package com.jun.算法实验.动态规划.矩阵相乘;
 
 /**
  * 参考思路

@@ -1,6 +1,4 @@
-package com.jun.最短路径;
-
-import org.omg.PortableInterceptor.INACTIVE;
+package com.jun.算法实验.动态规划.最短路径;
 
 import java.util.*;
 

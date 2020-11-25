@@ -1,8 +1,6 @@
-package com.jun.矩阵相乘;
+package com.jun.算法实验.动态规划.矩阵相乘;
 
 /**
- * https://www.cnblogs.com/scarecrow-blog/p/3712580.html
- *
  * @author Jun
  * @date 2020/11/18 下午10:00
  */
