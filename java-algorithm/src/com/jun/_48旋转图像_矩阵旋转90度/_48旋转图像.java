@@ -4,33 +4,31 @@ package com.jun._48旋转图像_矩阵旋转90度;
  * @author Jun
  * @date 2020/11/27 下午3:48
  */
-public class _48旋转图像 {
-    public static void main(String[] args) {
-        int[][] matrix = {
-                {1, 2, 3, 4},
-                {5, 6, 7, 8},
-                {9, 10, 11, 12},
-                {13, 14, 15, 16}
-        };
-        Solution solution = new Solution();
-        printMatrix(matrix);
-//        solution.矩阵逆时针旋转90度(matrix);
-        solution.矩阵逆时针旋转180度(matrix);
-        printMatrix(matrix);
-    }
-
-    private static void printMatrix(int[][] matrix) {
-        for (int[] elements : matrix) {
-            for (int element : elements) {
-                System.out.printf("%d ", element);
-            }
-            System.out.println();
-        }
-        System.out.println("-----------------------------");
-    }
-}
-
 class Solution {
+
+    public void rotate(int[][] matrix) {
+        int n = matrix.length;
+        // 逆置矩阵
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
+                int tmp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = tmp;
+            }
+        }
+        // 逆置每一行
+        for (int i = 0; i < n; i++) {
+            int left = 0;
+            int right = n - 1;
+            while (left < right) {
+                // System.out.println(left + "  " + right);
+                int tmp = matrix[i][left];
+                matrix[i][left++] = matrix[i][right];
+                matrix[i][right--] = tmp;
+            }
+        }
+    }
+
     /*
     本题是矩阵 顺势度旋转90度，
         1、先 将矩阵 原地 改成 逆置矩阵
@@ -112,6 +110,32 @@ class Solution {
             printMatrix(matrix);
             time++;
         }
+    }
+
+    private static void printMatrix(int[][] matrix) {
+        for (int[] elements : matrix) {
+            for (int element : elements) {
+                System.out.printf("%d ", element);
+            }
+            System.out.println();
+        }
+        System.out.println("-----------------------------");
+    }
+}
+
+public class _48旋转图像 {
+    public static void main(String[] args) {
+        int[][] matrix = {
+                {1, 2, 3, 4},
+                {5, 6, 7, 8},
+                {9, 10, 11, 12},
+                {13, 14, 15, 16}
+        };
+        Solution solution = new Solution();
+        printMatrix(matrix);
+//        solution.矩阵逆时针旋转90度(matrix);
+        solution.矩阵逆时针旋转180度(matrix);
+        printMatrix(matrix);
     }
 
     private static void printMatrix(int[][] matrix) {
