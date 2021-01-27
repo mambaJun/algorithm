@@ -76,8 +76,8 @@ class Solution {
         int inRoot = map.get(rootValue);
         TreeNode root = new TreeNode(rootValue);
         int rightSubtreeLen = postRight - inRoot;
-        root.left = buildTree(postLeft, inRoot - 1, inLeft, inRoot - 1);
-        root.right = buildTree(inRoot, postRight - 1, inRoot + 1, inRight);
+        root.left = buildTree(postLeft, postRight - 1 - rightSubtreeLen, inLeft, inRoot - 1);
+        root.right = buildTree(inRoot, postRight - 1, inRoot + rightSubtreeLen, inRight);
 
         return root;
     }

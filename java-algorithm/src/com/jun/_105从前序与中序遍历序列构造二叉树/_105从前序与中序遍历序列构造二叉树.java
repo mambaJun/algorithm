@@ -1,8 +1,5 @@
 package com.jun._105从前序与中序遍历序列构造二叉树;
 
-import org.omg.CORBA.INTERNAL;
-import sun.reflect.generics.tree.Tree;
-
 import java.util.HashMap;
 import java.util.Map;
 
