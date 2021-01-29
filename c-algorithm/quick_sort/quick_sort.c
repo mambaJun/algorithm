@@ -20,7 +20,6 @@ int main(void) {
     output(arr, n);
     return 0;
 }
-
 void output(int a[], int n) {
     while (n--) printf("%d ", *a++);
     putchar('\n');

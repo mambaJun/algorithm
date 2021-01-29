@@ -25,3 +25,4 @@ out
 target
 /.idea
 /*.iml
+!/src/com/jun/_1_test/Delete.java
