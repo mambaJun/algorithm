@@ -15,10 +15,7 @@ public class _56区间合并 {
                 {1, 4},
                 {4, 5}
         };
-        int[][] merge = merge(arr);
-        for (int[] ints : merge) {
-            System.out.println(Arrays.toString(ints));
-        }
+        System.out.println(Arrays.deepToString(merge(arr)));
     }
 
     public static int[][] merge(int[][] intervals) {
