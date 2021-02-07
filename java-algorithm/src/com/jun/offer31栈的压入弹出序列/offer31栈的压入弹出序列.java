@@ -6,9 +6,8 @@ package com.jun.offer31栈的压入弹出序列;
  */
 public class offer31栈的压入弹出序列 {
     public static void main(String[] args) {
-        int[] pushed = {1,2,3,4,5};
-        int[] popped = {4,5,3,2,1};
-
+        int[] pushed = {1, 2, 3, 4, 5};
+        int[] popped = {4, 5, 3, 2, 1};
         Solution solution = new Solution();
         System.out.println(solution.validateStackSequences(pushed, popped));
     }
@@ -17,8 +16,7 @@ public class offer31栈的压入弹出序列 {
 class Solution {
     public boolean validateStackSequences(int[] pushed, int[] popped) {
         int m;
-        int n;
-        if ((m = pushed.length) != (n = popped.length)) {
+        if ((m = pushed.length) != popped.length) {
             return false;
         }
 
