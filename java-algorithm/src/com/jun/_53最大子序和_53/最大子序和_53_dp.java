@@ -14,12 +14,11 @@ public class 最大子序和_53_dp {
 
     public static int maxSubArray(int[] nums) {
 
-        if(nums.length == 0) return 0;
+        if (nums.length == 0) return 0;
 
         // 一段段的子数列的和
         int sum = nums[0];
         int now = nums[0];
-        System.out.printf("sum=%d  now=%d\n",sum,now);
         for (int i = 1; i < nums.length; i++) {
 
             // 前面累加的增长 > 0 继续加，
@@ -28,10 +27,20 @@ public class 最大子序和_53_dp {
 
             // now 等于 从前面某一天到现在的增长
             if (now > sum) sum = now;
-
-            System.out.printf("sum=%d  now=%d nums[%d]=%d\n",sum,now,i,nums[i]);
-
         }
         return sum;
     }
+
+    public int maxSubArray1(int[] nums) {
+        if (nums == null || nums.length == 0) return 0;
+
+        int sum = nums[0];
+        // 利用 原有的 nums 作为 dp[]
+        for (int i = 1; i < nums.length; i++) {
+            nums[i] += Math.max(nums[i - 1], 0);
+            sum = Math.max(sum, nums[i]);
+        }
+        return sum;
+    }
+}
 }
