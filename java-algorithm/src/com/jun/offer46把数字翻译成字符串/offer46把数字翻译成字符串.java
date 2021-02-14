@@ -12,8 +12,6 @@ public class offer46把数字翻译成字符串 {
 //        System.out.println(solution.translateNum(12238));
         //    String[] letter = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
     }
-
-
 }
 
 class Solution {
@@ -37,7 +35,7 @@ class Solution {
     }
 
     void dfs(List<Integer> nums, int start, Deque<Integer> path) {
-        if (k == nums.size()) {
+        if (start == nums.size()) {
             count++;
             return;
         }
