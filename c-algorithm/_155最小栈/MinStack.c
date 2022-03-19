@@ -1,6 +1,8 @@
 //
 // created by jun on 2020/4/3 下午9:35.
 //
+#include<stdlib.h>
+#include<stdio.h>
 
 typedef struct Node {
     int value;
